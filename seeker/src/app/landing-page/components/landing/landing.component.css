@@ -1,0 +1,81 @@
+.card{
+    background-color: rgba(119, 201, 201, 0.185);
+    margin-left: 2%;
+  }
+  .card1{
+    height: 200px;
+    border: 0px;
+    border-radius: 30px;
+  }
+  .card1:hover{
+    box-shadow: rgba(46, 175, 240, 0.007) 5px 5px, rgba(46, 175, 240, 0.3) 10px 10px, rgba(46, 175, 240, 0.2) 15px 15px, rgba(46, 175, 240, 0.1) 20px 20px, rgba(46, 175, 240, 0.05) 25px 25px;
+    color: rgba(0, 0, 255, 0.377);
+  }
+  .alert{
+    height: 250px;
+background-color:  rgb(242 236 236) ;
+animation:  shake 1s infinite;
+
+}
+@keyframes shake 
+{
+    
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+  .viewalljobs{
+    background-color: #82c8ee49;
+    border-radius: 20px;
+    border: 0px;
+}
+.viewalljobs:hover{
+  box-shadow: white;
+  
+}
+
+.person{
+    
+    width: 25em;
+}
+
+.person img{
+    width: 5em;
+    height: 5em;
+
+}
+.job_cards:hover{
+  transition:1s ;
+  transform: scale(1.1);
+}
+
+.btn2{
+  height: 35px;
+  width: 180px;
+  background-color: #1d9c3dc2;
+}
+
+/* .top{ */
+  /* background-image: url(./images/image-2021-06-17T06-44-33.501Z.jpg );
+  background-size: cover; */
+/* } */
+.card-img-top{
+  height: 200px;
+}
+.btn_3{
+  background-color: rgba(240, 183, 241, 0.425);
+  border: none;
+  color: rgba(227, 103, 231, 0.822);
+}
+.btn_3:hover{
+  animation:  shake 1s infinite;
+}
+

@@ -1,0 +1,7 @@
+li:hover{
+    /* width: 160px; */
+    border-radius: 10px;
+    background-color: orangered;
+    color: black;
+    border: 2px solid orangered;
+}
