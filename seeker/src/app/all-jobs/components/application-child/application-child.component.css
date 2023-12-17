@@ -1,0 +1,95 @@
+.nav-item li:hover{
+    width: 195px;
+    border-radius: 10px;
+    background-color: rgba(250, 235, 215, 0.514);
+}
+.icon{
+    width: 1em;
+    height: 1em;
+}
+.img_pos{
+    margin-top: 2em;
+    margin-left: 2em;
+}
+
+.mern_text{
+    margin-top: -2.5em;
+    margin-left: 6em;
+
+}
+.Atrich_text{
+    margin-top: .5em;
+    margin-left: 6em;
+
+}
+.location_text{
+    margin-top: -1.5em;
+    margin-left: 10em;
+
+}
+.product_text{
+    
+    margin-left: 1em;
+
+}
+.amazon_text {
+    margin-top:7em ;
+
+}
+#open{
+    background-color: rgb(22, 190, 22);
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+    margin-top: -16px;
+    margin-left: 20px;
+    font-size: 12px;
+   
+}
+.name{
+    margin-left: 20px;
+    font-size: 14.5px;
+}
+.email{
+    font-size: 13.5px;
+    margin-top: -20px;
+    color: rgba(241, 238, 238, 0.705);
+}
+.list_down {
+    font-size: 11px;
+    
+}
+.list_down img{
+    width: 30px;
+} 
+.list_down p{
+    color: rgba(223, 222, 221, 0.733);
+    font-size: 13px;
+    margin-top: -13px;
+    height: 5px;
+}
+.head{
+    height: 70px;
+   
+
+}
+#menu1{
+    font-size: 12px;
+}
+.btn1{
+    background-color: rgba(163, 116, 98, 0.637);
+    color: white;
+    height: 30px;
+    font-size: 12px;
+}
+.c_name{
+    font-size: 12px;
+    margin-left: 85px;
+    margin-top: -20px;
+}
+body{
+        overflow-x: hidden;
+       }
+       .side{
+    z-index: 1;
+}

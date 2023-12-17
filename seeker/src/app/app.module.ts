@@ -11,12 +11,15 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { LandingComponent } from './landing-page/components/landing/landing.component';
 import { ProfileComponent } from './my-profile/components/profile/profile.component';
 import { MessageParentComponent } from './messages/components/message-parent/message-parent.component';
-
-
+import { FindComponent } from './all-jobs/components/find/find.component';
+import { ApplicationParentComponent } from './all-jobs/components/application-parent/application-parent.component';
+import { ApplicationChildComponent } from './all-jobs/components/application-child/application-child.component';
+import { AlljobsParentComponent } from './all-jobs/components/alljobs-parent/alljobs-parent.component';
+import { AlljobsChildComponent } from './all-jobs/components/alljobs-child/alljobs-child.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent
+    // SidebarComponent,
     // MessageParentComponent,
     // FooterComponent,
     // HeaderComponent,
@@ -28,7 +31,12 @@ import { MessageParentComponent } from './messages/components/message-parent/mes
     // LoginComponent,
     //  RegistrationComponent,
     // LandingComponent
-
+    // FindComponent
+    // ApplicationParentComponent
+    // ApplicationChildComponent
+    // AlljobsParentComponent
+    // AlljobsChildComponent
+    
   ],
   imports: [
     BrowserModule,
