@@ -4,6 +4,7 @@ import { AuthHomeComponent } from './auth-home/auth-home.component';
 import { AuthRoutingModule } from './routes/auth/auth-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 
 
 
@@ -11,7 +12,8 @@ import { RegistrationComponent } from './components/registration/registration.co
   declarations: [
     LoginComponent,
     AuthHomeComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     CommonModule,
