@@ -9,6 +9,12 @@ const routes: Routes = [{
   {
     path: 'dashboard', loadChildren: () => import('../../all-jobs/all-jobs.module').then(m=>m.AllJobsModule)
   },
+  {
+    path: 'application', loadChildren: () => import('../../application/application.module').then(m=>m.ApplicationModule)
+  },
+  {
+    path: 'messages', loadChildren: () => import('../../messages/messages.module').then(m=>m.MessagesModule)
+  },
 ]
 }];
 

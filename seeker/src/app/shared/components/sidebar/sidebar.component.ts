@@ -12,6 +12,12 @@ export class SidebarComponent {
   navigateToDashboard(){
     this.router.navigate(['home/dashboard']);
   }
+  navigateToApplication(){
+    this.router.navigate(['home/application']);
+  }
+  navigateToMessages(){
+    this.router.navigate(['home/messages']);
+  }
 
 
 }
