@@ -1,33 +1,31 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 bg-primary  border">
+        <div class="col-md-12 border" style="background-color: rgba(18, 56, 82, 0.938); opacity: 1;">
             <div class="row ">
-                <div class="col-md-8 bg-white h-100 rounded d-block mx-auto">
+                <div class="col-md-8 bg-white h-100 rounded d-block mx-auto w-50">
                    <img src="../../../../assets/images/WhatsApp Image 2023-10-14 at 3.30.29 PM.jpeg " class="image-response img-fluid h-50 w-50 d-block mx-auto ">
                   
-                    <div class="row ">
+                    <!-- <div class="row ">
                         <div class="col-md-1 "></div>
                         <div class="col-md-5 mx-auto ">
-                           <label class="" >FIRST NAME</label><br>
-                           <input type="text" class="border-0 border-bottom border-dark"  style="width: 69%;">
+                           <label class=" " >FIRST NAME</label><br>
+                           <input type="text" class="border-0 border-bottom form-control"  style="width: 69%;">
                         </div>
-                         <div class="col-md-5 float-end " >
-                            
-                            <label>LAST NAME</label><br>
-                            <input type="text"  class="border-0 border-bottom border-dark " style="width: 69%;">
-                        </div> 
-                    </div>
-                    <div class="row w-75 h-75 mx-auto">
+                          
+                    </div> -->
+                    <div class="row w-75 mx-auto">
+                      <label  class="mt-3">FULLNAME</label>
+                      <input type="text"  class="border-0 border-bottom form-control">
                        <label  class="mt-3">USERNAME</label>
-                       <input type="text"  class="border-0 border-bottom border-dark">
+                       <input type="text"  class="border-0 border-bottom form-control">
                         <label class="mt-3">Email</label>
-                        <input type="email"  class="border-0 border-bottom border-dark">
+                        <input type="email"  class="border-0 border-bottom form-control">
                         <label class="mt-3">PH. NUMBER</label>
-                        <input type="text"  class="border-0 border-bottom border-dark">
+                        <input type="text"  class="border-0 border-bottom form-control">
                         <label class="mt-3">Password</label>
-                        <input type="password"  class="border-0 border-bottom border-dark">
+                        <input type="password"  class="border-0 border-bottom form-control">
                         <label class="mt-3">CONFIRM Password</label>
-                        <input type="password"  class="border-0 border-bottom border-dark">
+                        <input type="password"  class="border-0 border-bottom form-control">
                         <h6 class="mt-3">Gender</h6>
                         <div class="navbar nav">
                         <div class="form-check">
@@ -49,8 +47,8 @@
                             </label>
                           </div>
                           </div>
-                        <input type="button" value="Register" class="text-white bg-info w-100 mt-5 mx-auto rounded border-0">
-                        <p class="text-center mt-2">Already have an account?<b class="text-info">Sign in</b></p>
+                        <a routerLink="/login"><input type="button" value="Register" class="text-white bg-info w-100 mt-5 mx-auto rounded border-0"></a>
+                        <a ><p class="text-center mt-2 text-decoration-none">Already have an account?<b class="text-info">Sign in</b></p></a>
                         
                      </div>
                   

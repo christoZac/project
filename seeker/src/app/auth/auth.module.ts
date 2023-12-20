@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './routes/auth/auth-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { PasswordSetupComponent } from './components/password-setup/password-setup.component';
 
 
 
@@ -13,7 +14,8 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
     LoginComponent,
     AuthHomeComponent,
     RegistrationComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    PasswordSetupComponent
   ],
   imports: [
     CommonModule,

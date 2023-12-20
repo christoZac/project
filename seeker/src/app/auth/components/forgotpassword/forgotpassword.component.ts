@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-forgotpassword',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./forgotpassword.component.css']
 })
 export class ForgotpasswordComponent {
+  constructor(private fb:FormBuilder){}
 
 }
