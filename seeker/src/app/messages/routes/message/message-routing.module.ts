@@ -3,9 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MessageParentComponent } from '../../components/message-parent/message-parent.component';
 
 const routes: Routes = [
-  {
-    path:"", component:MessageParentComponent
-  }
+  {path:'', component:MessageParentComponent}
 ];
 
 @NgModule({

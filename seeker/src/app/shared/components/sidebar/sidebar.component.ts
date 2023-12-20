@@ -18,6 +18,12 @@ export class SidebarComponent {
   navigateToMessages(){
     this.router.navigate(['home/messages']);
   }
+  navigateToprofile(){
+    this.router.navigate(['home/profile']);
+  }
+  navigateToSettings(){
+    this.router.navigate(['home/settings']);
+  }
 
 
 }

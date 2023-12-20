@@ -15,6 +15,13 @@ const routes: Routes = [{
   {
     path: 'messages', loadChildren: () => import('../../messages/messages.module').then(m=>m.MessagesModule)
   },
+  {
+    path:'settings', loadChildren: ()=> import('../../settings/settings.module').then(m=>m.SettingsModule)
+  },
+  {
+    path:'profile', loadChildren: ()=> import('../../my-profile/my-profile.module').then(m=>m.MyProfileModule)
+  },
+
 ]
 }];
 
