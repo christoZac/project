@@ -63,10 +63,10 @@ animation:  shake 1s infinite;
   background-color: #1d9c3dc2;
 }
 
-/* .top{ */
-  /* background-image: url(./images/image-2021-06-17T06-44-33.501Z.jpg );
-  background-size: cover; */
-/* } */
+.top{
+  background-image: url(../../../../assets/images/image-2021-06-17T06-44-33.501Z.jpg);
+  background-size: cover;
+}
 .card-img-top{
   height: 200px;
 }
