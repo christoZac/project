@@ -7,8 +7,12 @@ const routes: Routes = [
   path:'',loadChildren:()=>import ('./auth/auth.module').then(m=>m.AuthModule)
 },
 // {
+//   path:'',loadChildren: () => ('./landing-page/landing-page.module').then (m=>m.LandingPageModule)
+// }
+// {
 //   path:'',loadChildren:()=>import ('./all-jobs/all-jobs.module').then(m=>m.AllJobsModule)
 // }
+
 
 ];
 
