@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { PasswordSetupComponent } from './components/password-setup/password-setup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +21,8 @@ import { PasswordSetupComponent } from './components/password-setup/password-set
   imports: [
     CommonModule,
     AuthRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ]
 })

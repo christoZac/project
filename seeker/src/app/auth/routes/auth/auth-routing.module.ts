@@ -11,17 +11,8 @@ const routes: Routes = [{
   path:'',component:AuthHomeComponent,
   children:[
     {
-      path:'register', loadChildren:()=> import('./auth.module').then(m=>m.AuthModule)
-    },
-    {
-      path: '', component:RegistrationComponent
-    },
-    {
       path:'login',component:LoginComponent
     },
-    // {
-    //   path:'alljobs',component:AlljobsParentComponent
-    // },
     {
       path:'home', component:HomeComponent
     },

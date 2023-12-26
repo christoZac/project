@@ -16,4 +16,8 @@ export class LandingComponent {
     this.router.navigate(['/login'])
   }
 
+  navigateToFind(){
+    this.router.navigate(['/findJobs'])
+  }
+
 }
