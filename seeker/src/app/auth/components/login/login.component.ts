@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  value(data:any){
+    console.log(data);
+    
+
+  }
+
  }

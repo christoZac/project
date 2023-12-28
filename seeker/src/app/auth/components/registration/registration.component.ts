@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { seekerReg } from '../../model/signUp';
 import { AuthService } from '../../service/auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -12,6 +13,7 @@ export class RegistrationComponent {
   registerForm!: FormGroup;
   submitted: boolean = false;
   signUpData!: seekerReg;
+  
 
   constructor(private fb: FormBuilder, private authService: AuthService) {}
 
@@ -31,14 +33,35 @@ export class RegistrationComponent {
     if (this.registerForm.valid) {
       this.signUpData = this.registerForm.value;
       console.log(this.signUpData);
+      this.authService.register(this.signUpData).subscribe((data: any) => {
+        console.log(data);
 
-      this.authService.postUser(this.signUpData).subscribe((data: any) => {
-        if (data.status >= 200 && data.status <= 299) {
-          console.log('Successfully registered');
-        } else {
-          console.log('Registration failed');
-        }
-      });
+
+        
+        // this.authService.verifyEmail(this.signupId).subscribe(
+        //   (verificationData: any) => {
+        //     console.log(verificationData);
+            alert("success");
+      },
+    //   (verificationError) => {
+    //     console.log(verificationError);
+    //     alert('Registration successful, but email verification failed.');
+    //   }
+    //     )}
+        
+        
+    // else{
+    //   alert("failed");
+
+    // }},
+     
+      (error)=>{
+        alert("signup failed");
+          console.log(error);
+      }
+     );
     }
   }
-}
+  }
+
+
