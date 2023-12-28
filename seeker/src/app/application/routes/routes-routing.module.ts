@@ -7,6 +7,9 @@ const routes: Routes = [
   {
     path:'',component:ApplicationParentComponent
   },
+  // {
+  //   path:'application',component:ApplicationParentComponent
+  // },
 ];
 
 @NgModule({

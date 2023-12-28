@@ -8,6 +8,9 @@ const routes: Routes = [
 // },
 {
   path:'', loadChildren: () => import ('./landing/landing.module').then (m=>m.LandingModule)
+},
+{
+  path:'application', loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule)
 }
 
 

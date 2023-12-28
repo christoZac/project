@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AllJobsModule } from './all-jobs/all-jobs.module';
+import { LandingModule } from './landing/landing.module';
+import { ApplicationModule } from './application/application.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     HomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LandingModule,
+    AllJobsModule,
+    ApplicationModule,
+    HttpClientModule
     // HeaderComponent
   ],
   providers: [],

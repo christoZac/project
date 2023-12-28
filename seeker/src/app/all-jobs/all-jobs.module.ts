@@ -7,6 +7,8 @@ import { AlljobsParentComponent } from './components/alljobs-parent/alljobs-pare
 import { AlljobsChildComponent } from './components/alljobs-child/alljobs-child.component';
 import { AllHomeComponent } from './components/all-home/all-home.component';
 import { JobsRoutingModule } from './routes/jobs/jobs-routing.module';
+import { find } from 'rxjs';
+import { FindComponent } from './components/find/find.component';
 
 
 
@@ -17,7 +19,8 @@ import { JobsRoutingModule } from './routes/jobs/jobs-routing.module';
     SubmitJobsComponent,
     AlljobsParentComponent,
     AlljobsChildComponent,
-    AllHomeComponent
+    AllHomeComponent,
+    FindComponent
   ],
   imports: [
     CommonModule,

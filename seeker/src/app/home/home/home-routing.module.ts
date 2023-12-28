@@ -5,10 +5,13 @@ import { HomeComponent } from '../components/home/home.component';
 const routes: Routes = [{
   path: 'home', component:HomeComponent,
   children: [
+    {
+      path: '', loadChildren: () => import('../../all-jobs/all-jobs.module').then(m=>m.AllJobsModule)
+    },
   
-  {
-    path: 'dashboard', loadChildren: () => import('../../all-jobs/all-jobs.module').then(m=>m.AllJobsModule)
-  },
+  // {
+  //   path: 'dashboard', loadChildren: () => import('../../all-jobs/all-jobs.module').then(m=>m.AllJobsModule)
+  // },
   {
     path: 'application', loadChildren: () => import('../../application/application.module').then(m=>m.ApplicationModule)
   },
