@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SettingsComponent } from './components/settings/settings.component';
+import { SettingRoutingModule } from './routes/setting/setting-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     SettingsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SettingRoutingModule
   ]
 })
 export class SettingsModule { }
