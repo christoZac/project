@@ -31,7 +31,7 @@ import { AlljobsChildComponent } from './all-jobs/components/alljobs-child/alljo
     // LoginComponent,
     //  RegistrationComponent,
     // LandingComponent
-    // FindComponent
+    FindComponent
     // ApplicationParentComponent
     // ApplicationChildComponent
     // AlljobsParentComponent
