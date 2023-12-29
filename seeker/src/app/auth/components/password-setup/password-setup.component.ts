@@ -11,7 +11,9 @@ export class PasswordSetupComponent {
 
 signupId!: string ;
 emailVerified:boolean=false;
+password!:string;
 constructor( private route: ActivatedRoute, private authService:AuthService) {
+
   this.route.queryParams.subscribe(params => {
     this.signupId = params['signupid'];
     alert(this.signupId)
@@ -41,22 +43,20 @@ this.submit=false;
   //   console.log(data);
 
   // })}
-
-passwordCheck(newPass:any,cPass:any){
-  if(newPass===cPass){
-    // this.authService.verifyPassword(this.signupId,password).subscribe((data: any) => {
-    // console.log(data);
-    console.log("password success");
-
-    
+  passwordCheck(newPass: string, cPass: string) {
+    if (newPass === cPass) {
+      this.authService.verifyPassword(newPass, this.signupId).subscribe(
+        (data: any) => {
+          console.log(data);
+          console.log("Password verification success");
+        },
+        (error) => {
+          console.error("Password verification failed", error);
+        }
+      );
+    } else {
+      console.log("Passwords do not match");
+    }
   }
-  else{
-    console.log("not match");
-    
-  }
-
-}
-
   
 }
-
