@@ -10,14 +10,14 @@ import { AuthService } from '../../service/auth.service';
 })
 export class ForgotpasswordComponent {
  
-  constructor(private fb:FormBuilder,private authService: AuthService){}
+  // constructor(private fb:FormBuilder,private authService: AuthService){}
 
 
-  submit() {
-  this.authService.verifyPassword(signupId,password).subscribe((data: any) => {
-    console.log(data);
-    
-  })}
+  // submit() {
+  // this.authService.verifyPassword(signupId,password).subscribe((data: any) => {
+  //   console.log(data);
+
+  // })}
 }
 
   

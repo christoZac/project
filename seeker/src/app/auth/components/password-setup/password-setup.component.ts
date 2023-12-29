@@ -36,6 +36,26 @@ click()   {
 
 this.submit=false;
 }
+  // submit() {
+  // this.authService.verifyPassword(signupId,password).subscribe((data: any) => {
+  //   console.log(data);
+
+  // })}
+
+passwordCheck(newPass:any,cPass:any){
+  if(newPass===cPass){
+    // this.authService.verifyPassword(this.signupId,password).subscribe((data: any) => {
+    // console.log(data);
+    console.log("password success");
+
+    
+  }
+  else{
+    console.log("not match");
+    
+  }
+
+}
 
   
 }

@@ -35,9 +35,7 @@ export class RegistrationComponent {
       console.log(this.signUpData);
       this.authService.register(this.signUpData).subscribe((data: any) => {
         console.log(data);
-
-
-        
+      
         // this.authService.verifyEmail(this.signupId).subscribe(
         //   (verificationData: any) => {
         //     console.log(verificationData);
@@ -47,9 +45,7 @@ export class RegistrationComponent {
     //     console.log(verificationError);
     //     alert('Registration successful, but email verification failed.');
     //   }
-    //     )}
-        
-        
+    //     )}       
     // else{
     //   alert("failed");
 
