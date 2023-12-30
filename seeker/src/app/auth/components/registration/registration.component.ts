@@ -35,22 +35,12 @@ export class RegistrationComponent {
       console.log(this.signUpData);
       this.authService.register(this.signUpData).subscribe((data: any) => {
         console.log(data);
-      
-        // this.authService.verifyEmail(this.signupId).subscribe(
-        //   (verificationData: any) => {
-        //     console.log(verificationData);
+
+        
+
             alert("success");
       },
-    //   (verificationError) => {
-    //     console.log(verificationError);
-    //     alert('Registration successful, but email verification failed.');
-    //   }
-    //     )}       
-    // else{
-    //   alert("failed");
 
-    // }},
-     
       (error)=>{
         alert("signup failed");
           console.log(error);

@@ -82,7 +82,8 @@
           <input type="password" placeholder="Password" name="password" #password="ngModel" required ngModel>
           <div *ngIf="password.invalid && password.touched" class="text-danger">Enter Password</div>
 
-          <a [routerLink]="['/home']"><button [disabled]="loginForm.invalid" (click)="value(loginForm.value)">Log In</button></a>
+          <!-- <a [routerLink]="['/home']"></a> -->
+          <button [disabled]="loginForm.invalid" (click)="seekerLogin(loginForm.value)">Log In</button>
           <a routerLink="/forgot-password"><p class="text-decoration-none text-white mt-2 ms-3 float-end">Forgot password?</p></a>
          <div><p>Dont have an account? <a routerLink="/register"><span>signUp</span></a></p>
           </div>
