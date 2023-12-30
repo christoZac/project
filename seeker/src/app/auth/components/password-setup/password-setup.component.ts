@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class PasswordSetupComponent {
 signupId!: string ;
 emailVerified:boolean=false;
 password!:string;
-constructor( private route: ActivatedRoute, private authService:AuthService) {
+constructor( private route: ActivatedRoute, private authService:AuthService,private router:Router) {
 
   this.route.queryParams.subscribe(params => {
     this.signupId = params['signupid'];
@@ -39,25 +39,23 @@ click()   {
 this.submit=false;
 }
  
-  passwordCheck(newPass: string, cPass: string) {
-    if (newPass === cPass) {
-      this.authService.verifyPassword(newPass, this.signupId).subscribe(
-        (data: any) => {
-          alert(data)
+passwordCheck(newPass: string, cPass: string) {
+  if (newPass === cPass) {
+    this.authService.verifyPassword(newPass, this.signupId).subscribe(
+      (data: any) => {
+         console.log(data);
+       },
+    );
+    this.router.navigate(['/login'])
 
-          if(data.status==200 && data.status>300){
-            alert("password set successfully")
-          }
-          else{
-            alert('failed to set')
-          }
-        },
-        
-      );
-    } else {
-      console.log("Passwords do not match");
-    }
+    alert("Password set successfully");
+  } else {
+    alert("Passwords do not match");
   }
 }
+
+}
+
+
 
  
