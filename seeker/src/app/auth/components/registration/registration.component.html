@@ -30,10 +30,10 @@
                         <div class="ml-4 mt-2" *ngIf="submitted && registerForm.controls['email'].errors"
                             style="color: crimson;">please enter your email
                         </div>
-                        <a routerLink="/set-password">
+                        <a routerLink="/set-password"></a>
                             <button type="submit" class="btn btn-info mt-2" 
                                 (click)="submit()">Register</button>
-                        </a>
+                        
                         <p class="text-center text-decoration-none">Already have an account?
                             <a routerLink="/login"><b class="text-info">Sign in</b></a>
                         </p>
