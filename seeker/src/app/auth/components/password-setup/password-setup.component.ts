@@ -38,25 +38,26 @@ click()   {
 
 this.submit=false;
 }
-  // submit() {
-  // this.authService.verifyPassword(signupId,password).subscribe((data: any) => {
-  //   console.log(data);
-
-  // })}
+ 
   passwordCheck(newPass: string, cPass: string) {
     if (newPass === cPass) {
       this.authService.verifyPassword(newPass, this.signupId).subscribe(
         (data: any) => {
-          console.log(data);
-          console.log("Password verification success");
+          alert(data)
+
+          if(data.status==200 && data.status>300){
+            alert("password set successfully")
+          }
+          else{
+            alert('failed to set')
+          }
         },
-        (error) => {
-          console.error("Password verification failed", error);
-        }
+        
       );
     } else {
       console.log("Passwords do not match");
     }
   }
-  
 }
+
+ 
