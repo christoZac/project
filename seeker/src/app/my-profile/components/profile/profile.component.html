@@ -1,6 +1,7 @@
-<form class="w-50 mx-auto">
+<form #profileForm="ngForm" class="w-50 mx-auto mt-5">
    <h4> Add profile</h4>
    <input type="text" placeholder="profileName" class="form-control"><br>
    <input type="text" placeholder="profileSummary" class="form-control"><br>
+   <button class="btn btn-primary" (click)="newProfile(profileForm.value)">Submit</button>
 
 </form>
