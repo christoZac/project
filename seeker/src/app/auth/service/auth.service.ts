@@ -11,9 +11,7 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  getToken():any{
-    return localStorage.getItem('accessToken')
-  }
+  
 
   register(userData:any):Observable<any>{
     return this.http.post<seekerReg[]>(environment.baseUrl+'v1/job-seeker/signup',userData,{observe: 'response'})
@@ -31,6 +29,9 @@ export class AuthService {
 
   login(data:any){
     return this.http.post<any>(environment.baseUrl+'v1/job-seeker/login',data)
+  }
+  getToken():any{
+    return localStorage.getItem('accessToken')
   }
   
   
