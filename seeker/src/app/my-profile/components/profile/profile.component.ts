@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { profile } from '../../model/profile';
 import { ProfileService } from '../../service/profile.service';
 
 @Component({
@@ -7,12 +8,16 @@ import { ProfileService } from '../../service/profile.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  profiles:profile[]=[]
+
 
   constructor(private ps:ProfileService){}
 
-  newProfile(id:any){
-    this.ps.addProfile(id).subscribe((response)=>{
-      console.log(response);
+  newProfile(data:any){
+    
+    this.ps.addProfile(data).subscribe((response:profile[])=>{
+      this.profiles=response
+      console.log(this.profiles);
       
     })
 

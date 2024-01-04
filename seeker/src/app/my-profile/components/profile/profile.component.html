@@ -1,7 +1,13 @@
-<form #profileForm="ngForm" class="w-50 mx-auto mt-5">
-   <h4> Add profile</h4>
-   <input type="text" placeholder="profileName" class="form-control"><br>
-   <input type="text" placeholder="profileSummary" class="form-control"><br>
-   <button class="btn btn-primary" (click)="newProfile(profileForm.value)">Submit</button>
-
+<form #profileForm="ngForm" class="w-50 mx-auto mt-5" (ngSubmit)="newProfile(profileForm.value)">
+   <h4>Add profile</h4>
+   
+   <input class="form-control" type="text" placeholder="Profile Name" name="profileName" ngModel #profileName="ngModel" required>
+   <div *ngIf="profileName.invalid && profileName.touched" class="text-danger">Enter Valid Profile Name</div>
+   
+   <br>
+   
+   <input class="form-control" type="text" placeholder="Profile Summary" name="profileSummary" ngModel #profileSummary="ngModel" required>
+   <div *ngIf="profileSummary.invalid && profileSummary.touched" class="text-danger">Enter Profile Summary</div>
+   
+   <button class="btn btn-primary" type="submit">Submit</button>
 </form>
