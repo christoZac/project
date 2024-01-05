@@ -9,6 +9,7 @@ import { AllHomeComponent } from './components/all-home/all-home.component';
 import { JobsRoutingModule } from './routes/jobs/jobs-routing.module';
 import { find } from 'rxjs';
 import { FindComponent } from './components/find/find.component';
+import { TextTransformPipe } from './components/alljobs-parent/custompipe';
 
 
 
@@ -20,7 +21,8 @@ import { FindComponent } from './components/find/find.component';
     AlljobsParentComponent,
     AlljobsChildComponent,
     AllHomeComponent,
-    FindComponent
+    FindComponent,
+    TextTransformPipe
   ],
   imports: [
     CommonModule,

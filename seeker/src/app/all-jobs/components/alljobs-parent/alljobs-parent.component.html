@@ -1,34 +1,37 @@
 <div class="container-fluid">
-<div class="row">
-    <div class="col-md-7 " >
-        <div class="navbar nav"> 
-       <!-- <span style=" font-weight: bold; font-size: smaller;"><img class="icon size" src="../../../../assets/images/search-normal.png" alt="">Search For Jobs</span> <span></span> <span></span> <span></span><span></span><span style="font-weight: bold; font-size: smaller;"><img class="icon size " src=".././../../../assets/images/location.png" alt="">Location <img  class="icon size" src="../../../../assets/images/arrow-down.png" alt=""></span><span style="background-color: azure;"> <img  class="icon size" src="../../../../assets/images/setting-4.png" alt=""></span>  -->
-            <input type="text" class="form-control w-75" placeholder="search for Jobs"> <span><img src="../../../../assets/images/location.png" alt=""> Location</span>
-    </div>
-
-
-    <div class="navbar nav">     <span class="fs-5 fw-bold">All Jobs</span> 
-        <a routerLink="/savedjobs"><span class="fs-5 fw-bold text-dark save" style="text-decoration: none;">Saved Jobs</span></a>
-
-        <span style="font-weight: bold;"></span><li> <span> Sort by:</span> <a routerLink="./alljobs/newjobs"><span style="font-weight: bold;"> Newest Jobs</span></a><img  src=".././../../../assets/images/Arrow - Down 2 (2).png"></li>
-    </div>
-
-    <div  class="card border-0 shadow"*ngFor="let list of jobs">
-        <div class="card-body " >
-            
-         <!-- <img src="../../../../assets/images/Rectangle 14.png" alt="image1">
-         <span class="ms-4  fw-bold">Customer Service</span>
-         <p class="c_name text-info">Aitritch Technologies &#8226; Location</p>
-        <p class="card-text">We are looking for a UI/UX Designer to turn our software into easy-to-use products
-         for our clients.</p>
-         <div class="btn btn1 border rounded-pill">Full-Time</div>
-         <div class="btn btn1 border rounded-pill">Mid Level</div>
-         <div class="btn btn1 border rounded-pill">$3000-$5000</div>
-         <div class="btn btn1 border rounded-pill">indonesia</div>
-         <div class="btn btn1 border rounded-pill">Onsite</div> -->
+    <div class="row">
+      <div class="col-md-7">
+        <div class="navbar nav">
+          <input type="text" class="form-control w-75" placeholder="Search for Jobs">
+          <span><img src="../../../../assets/images/location.png" alt=""> Location</span>
         </div>
-         </div>
-         <p>jobs</p>
-                   
-</div>
-</div>
+      </div>
+  
+      <div class="navbar nav">
+        <span class="fs-5 fw-bold">All Jobs</span>
+        <a routerLink="/savedjobs"><span class="fs-5 fw-bold text-dark save" style="text-decoration: none;">Saved Jobs</span></a>
+        <span style="font-weight: bold;"></span>
+        <li>
+          <span> Sort by:</span>
+          <a routerLink="./alljobs/newjobs"><span style="font-weight: bold;"> Newest Jobs</span></a>
+          <img src=".././../../../assets/images/Arrow - Down 2 (2).png">
+        </li>
+      </div>
+  
+      <div *ngFor="let list of jobs" class="card border-0 shadow">
+        <div class="card-body"><button class="btn btn-primary border rounded float-end"(click)="saveJob(list.id)">Save</button>
+          <img src="../../../../assets/images/Rectangle 14.png" alt="image1">
+          <span class="ms-4 fw-bold">{{ list.jobTitle | textTransform }}</span>
+          <p class="c_name text-info">{{ list.jobSummary | textTransform  }}</p>
+          <p class="card-text">Posted Date: {{ list.postedDate | textTransform  }}</p>
+          <div class="btn btn1 border rounded-pill">Full-Time</div>
+          <div class="btn btn1 border rounded-pill">Mid Level</div>
+          <div class="btn btn1 border rounded-pill">$3000-$5000</div>
+          <div class="btn btn1 border rounded-pill">save</div>
+          <div class="btn btn1 border rounded-pill">Onsite</div>
+        </div>
+      </div>
+  
+    </div>
+  <!-- </div> -->
+  

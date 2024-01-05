@@ -1,5 +1,5 @@
-export class job{
-  id:string="";
+export class saved{
+    id:string="";
     jobTitle: string="";
     jobSummary: string="";
     locationId: string="";
@@ -8,5 +8,4 @@ export class job{
     industryId: string="";
     postedBy: string="";
     postedDate: string="";
-  
-  }
+}
