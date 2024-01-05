@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { profile } from '../model/profile';
+import { getProfile, profile } from '../model/profile';
 import { environment } from 'src/app/environment/environment';
 import { Observable } from 'rxjs';
 
@@ -11,14 +11,24 @@ export class ProfileService {
 
   constructor(private http:HttpClient) { }
 
-// addProfile(data: any) {
-//   return this.http.post<profile[]>(environment.baseUrl + 'v1/AddProfile', data);
-// }
+
+  getItem():any{
+    return localStorage.getItem('id')
+    
+  }
+
+  getProfile(){
+    const jobSeekerId=this.getItem()
+    return this.http.get<getProfile[]>(environment.baseUrl+'v1/GetJobSeekerProfile/'+jobSeekerId)
+  }
+
 
 
 
   addProfile(id: any){
     return this.http.post(environment.baseUrl + 'v1/AddProfile', id);
   }
+
+  
   
 }

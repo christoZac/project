@@ -5,6 +5,7 @@ import { UpdateProfileComponent } from './components/update-profile/update-profi
 import { ProfileRoutingModule } from './routes/profile/profile-routing.module';
 import { ViewprofileComponent } from './components/viewprofile/viewprofile.component';
 import { FormsModule } from '@angular/forms';
+import { ShowProfileComponent } from './components/show-profile/show-profile.component';
 
 
 
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     ProfileComponent,
     UpdateProfileComponent,
-    ViewprofileComponent
+    ViewprofileComponent,
+    ShowProfileComponent
   ],
   imports: [
     CommonModule,
