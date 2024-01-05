@@ -16,7 +16,12 @@ export class AuthInterceptor implements HttpInterceptor {
 
     const token = this.authservice.getToken();
     // const provider_id = localStorage.getItem('id');
+
     // const role = localStorage.getItem('role');
+        const jobSeekerId = localStorage.getItem('id');
+
+
+
 
       request = request.clone({
         setHeaders: {
@@ -24,6 +29,7 @@ export class AuthInterceptor implements HttpInterceptor {
           Authorization: `Bearer ${token}`,
           // 'id': provider_id ? provider_id : '', // Add user ID to the headers (if available)
           // role: role
+          'id':jobSeekerId ? jobSeekerId:''
         }
       });
 

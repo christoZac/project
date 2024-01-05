@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/app/environment/environment';
-import { seekerReg, setPassword } from 'src/app/auth/model/signUp';
+import { login, seekerReg, setPassword } from 'src/app/auth/model/signUp';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,9 +11,7 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  getToken():any{
-    return localStorage.getItem('accessToken')
-  }
+  
 
   register(userData:any):Observable<any>{
     return this.http.post<seekerReg[]>(environment.baseUrl+'v1/job-seeker/signup',userData,{observe: 'response'})
@@ -30,7 +28,14 @@ export class AuthService {
   }
 
   login(data:any){
-    return this.http.post(environment.baseUrl+'v1/job-seeker/login',data)
+    return this.http.post<any>(environment.baseUrl+'v1/job-seeker/login',data)
+  }
+  getToken():any{
+    return localStorage.getItem('accessToken')
+  }
+  getItem():any{
+    return localStorage.getItem('id')
+    
   }
   
   

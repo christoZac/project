@@ -71,7 +71,7 @@
           <div class="shape"></div>
           <div class="shape"></div>
         </div>
-        <form #loginForm="ngForm" (ngSubmit)="seekerLogin()">
+        <form #loginForm="ngForm">
           <h3>Login Here</h3>
 
           <label for="username">Username</label>
@@ -83,7 +83,7 @@
           <div *ngIf="password.invalid && password.touched" class="text-danger">Enter Password</div>
 
           <!-- <a [routerLink]="['/home']"></a> -->
-          <button [disabled]="loginForm.invalid" (click)="value(loginForm.value)">Log In</button>
+          <button [disabled]="loginForm.invalid" (click)="seekerLogin(loginForm.value)">Log In</button>
           <a routerLink="/forgot-password"><p class="text-decoration-none text-white mt-2 ms-3 float-end">Forgot password?</p></a>
          <div><p>Dont have an account? <a routerLink="/register"><span>signUp</span></a></p>
           </div>
