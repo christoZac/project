@@ -9,5 +9,5 @@
    <input class="form-control" type="text" placeholder="Profile Summary" name="profileSummary" ngModel #profileSummary="ngModel" required>
    <div *ngIf="profileSummary.invalid && profileSummary.touched" class="text-danger">Enter Profile Summary</div>
    
-   <button class="btn btn-primary" type="submit" (click)="newProfile(profileForm.value)">Submit</button>
+   <a routerLink="viewProfile"><button class="btn btn-primary mt-2" type="submit" (click)="newProfile(profileForm.value)">Submit</button></a>
 </form>
