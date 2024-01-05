@@ -1,4 +1,5 @@
-<form #profileForm="ngForm" class="w-50 mx-auto mt-5">
+<a routerLink="viewProfile"><h5 class="float-end">List Profile</h5></a>
+<form #profileForm="ngForm" class="w-50 mx-auto mt-5 border p-5 shadow">
    <h4>Add profile</h4>
    
    <input class="form-control" type="text" placeholder="Profile Name" name="profileName" ngModel #profileName="ngModel" required>
@@ -9,5 +10,5 @@
    <input class="form-control" type="text" placeholder="Profile Summary" name="profileSummary" ngModel #profileSummary="ngModel" required>
    <div *ngIf="profileSummary.invalid && profileSummary.touched" class="text-danger">Enter Profile Summary</div>
    
-   <button class="btn btn-primary" type="submit" (click)="newProfile(profileForm.value)">Submit</button>
+   <a routerLink="viewProfile"><button class="btn btn-primary mt-2" type="submit" (click)="newProfile(profileForm.value)">Submit</button></a>
 </form>
