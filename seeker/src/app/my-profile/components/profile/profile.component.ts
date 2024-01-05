@@ -8,19 +8,22 @@ import { ProfileService } from '../../service/profile.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  profiles: profile[] = [];
+  profiles!:profile
 
-  constructor(private ps: ProfileService) {}
-  
-  newProfile(data: any) {
-      this.ps.addProfile(data).subscribe(
-          (response: any) => {
-              console.log(response);
-          },
-          (error) => {
-              console.error('Error adding profile:', error);
-          }
-      );
+
+  constructor(private ps:ProfileService){}
+
+  newProfile(data:profile){
+    console.log(data);
+    const jobSeekerId=localStorage.getItem('id');
+    data.jobSeekerId=jobSeekerId;
+    this.ps.addProfile(data).subscribe((response:any)=>{
+      console.log(response);
+ 
+    })
+
+    
+
   }
   
 

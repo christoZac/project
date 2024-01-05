@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
 import { login } from '../../model/signUp';
 import { Router } from '@angular/router';
+import { profile } from 'src/app/my-profile/model/profile';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  profiles!:profile
 
   constructor(private authservice:AuthService,private router:Router){}
 
@@ -18,6 +21,8 @@ export class LoginComponent {
       console.log(response);
 
       const token=localStorage.setItem('accessToken',response.token)
+      const jobSeekerId=localStorage.setItem("id",response.id)
+
 
       if(response.token){
         alert("login success")

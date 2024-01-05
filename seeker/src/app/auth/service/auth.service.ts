@@ -33,6 +33,10 @@ export class AuthService {
   getToken():any{
     return localStorage.getItem('accessToken')
   }
+  getItem():any{
+    return localStorage.getItem('id')
+    
+  }
   
   
 }
