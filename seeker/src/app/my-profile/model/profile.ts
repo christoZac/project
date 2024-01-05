@@ -1,5 +1,5 @@
 export class profile{
-    jobSeekerId!:string;
+    jobSeekerId:any | undefined;
     profileName!:string;
     profileSummary!:string;
 }
