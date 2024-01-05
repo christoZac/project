@@ -10,9 +10,9 @@ export class ProfileService {
 
   constructor(private http:HttpClient) { }
 
-  addProfile(id:any){
-    return this.http.post<profile[]>(environment.baseUrl+'v1/AddProfile',id)
+addProfile(data: any) {
+  return this.http.post<profile[]>(environment.baseUrl + 'v1/AddProfile', data);
+}
 
-    
-  }
+
 }
