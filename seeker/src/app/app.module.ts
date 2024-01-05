@@ -11,10 +11,10 @@ import { LandingModule } from './landing/landing.module';
 import { ApplicationModule } from './application/application.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/Interceptor/auth.interceptor';
+import { FindComponent } from './all-jobs/components/find/find.component';
 
 @NgModule({
   declarations: [
-<<<<<<< HEAD
     AppComponent,
     // SidebarComponent,
     // MessageParentComponent,
@@ -28,15 +28,12 @@ import { AuthInterceptor } from './core/Interceptor/auth.interceptor';
     // LoginComponent,
     //  RegistrationComponent,
     // LandingComponent
-    FindComponent
+      // FindComponent
     // ApplicationParentComponent
     // ApplicationChildComponent
     // AlljobsParentComponent
     // AlljobsChildComponent
     
-=======
-    AppComponent,    
->>>>>>> 0a6d23424156373bdc6fc2dc0fd6fedd4c384096
   ],
   imports: [
     BrowserModule,
