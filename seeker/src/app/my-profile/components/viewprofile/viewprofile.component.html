@@ -1,25 +1,13 @@
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-md-4 mt-3" *ngFor="let list of profileData">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">{{list.profileName}}</h5>
-                        <p class="card-text">{{list.profileSummary}}</p>
-                    </div>
-                        <a routerLink="show"><button class="btn btn-primary">View Profile</button>
-                
-            </div>
-        </div>
-    </div> -->
+
 <div class="container">
     <div class="row">
         <div class="col-4" *ngFor="let list of profileData">
-            <div class="card h-100">
+            <div class="card h-100 shadow">
                 <div class="card-body">
-                    <h5>{{list.profileName}}</h5>
-                    <p>{{list.profileSummary}}</p>
+                    <h5>{{list.profileName | titlecase}}</h5>
+                    <p>{{list.profileSummary |titlecase}}</p>
                 </div>
-                <button  class="btn btn-primary w-25" (click)="getId(list)">View</button>
+                <a [routerLink]="['../show',list.id]"><button  class="btn btn-primary" (click)="getId(list)">View</button></a>
 
             </div>
 

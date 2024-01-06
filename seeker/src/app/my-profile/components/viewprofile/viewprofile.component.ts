@@ -15,9 +15,11 @@ export class ViewprofileComponent implements OnInit {
 
   ngOnInit() {
     this.showProfile();
-  }
-
-  
+}
+getId(data: getProfile): void {
+  const profileId = data.id;
+  this.router.navigate(['/show', profileId]);
+}
 
   showProfile() {
 
