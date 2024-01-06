@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { getProfile } from '../../model/profile';
 
 @Component({
@@ -8,14 +8,17 @@ import { getProfile } from '../../model/profile';
   styleUrls: ['./show-profile.component.css']
 })
 export class ShowProfileComponent {
-  profile!:getProfile
+  profileData!: getProfile;
   profileId!: string;
 
-  constructor(private route: ActivatedRoute, private router:Router){
-    // getId(data:any){
-      // console.log(data);
-      // alert(data)
-    
+  constructor(private route: ActivatedRoute) { }
+  ngOnInit(){
+    this.route.queryParams.subscribe(params => {
+      this.profileId = params['id']; 
+      alert(this.profileId);
+      console.log(this.profileId);
+    });
   }
-  }
-// }
+
+  
+}

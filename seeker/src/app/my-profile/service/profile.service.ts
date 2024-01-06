@@ -29,6 +29,9 @@ export class ProfileService {
     return this.http.post(environment.baseUrl + 'v1/AddProfile', id);
   }
 
+  getProfileId():any{
+    return localStorage.getItem('p_id')
+  }
   
   
 }
