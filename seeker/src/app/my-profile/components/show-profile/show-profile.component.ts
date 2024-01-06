@@ -1,21 +1,21 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { getProfile } from '../../model/profile';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-show-profile',
   templateUrl: './show-profile.component.html',
   styleUrls: ['./show-profile.component.css']
 })
-export class ShowProfileComponent {
-  profile!:getProfile
+export class ShowProfileComponent implements OnInit {
   profileId!: string;
+  
 
-  constructor(private route: ActivatedRoute, private router:Router){
-    // getId(data:any){
-      // console.log(data);
-      // alert(data)
-    
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.profileId = params['id'];
+      console.log('ID:', this.profileId);
+    });
   }
-  }
-// }
+}

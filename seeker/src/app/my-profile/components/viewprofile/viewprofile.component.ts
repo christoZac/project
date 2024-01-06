@@ -16,14 +16,11 @@ export class ViewprofileComponent {
 
   ngOnInit() {
     this.showProfile();
-  }
-  getId(data:any){
-    console.log(data);
-    alert(data)
-  
 }
-
-  
+getId(data: getProfile): void {
+  const profileId = data.id;
+  this.router.navigate(['/show', profileId]);
+}
 
   showProfile() {
     this.ps.getProfile().subscribe((response: getProfile[]) => {
