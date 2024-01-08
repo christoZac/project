@@ -19,3 +19,11 @@ export class Skill{
     description!:string;
 
 }
+
+export class Experience{
+  jobTitle: string | undefined;
+  companyName: string | undefined;
+  summary: string | undefined;
+  serviceStart: string | undefined;
+  serviceEnd: string | undefined;
+}

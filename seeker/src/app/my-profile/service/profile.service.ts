@@ -32,6 +32,10 @@ export class ProfileService {
     const jobSeekerId=this.getItem()
     return this.http.get<Skill[]>(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills')
   }
+  postExperience(data:any,profileId:any){
+    const jobSeekerId=this.getItem()
+    return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experience',data)
+  }
   
   
 }

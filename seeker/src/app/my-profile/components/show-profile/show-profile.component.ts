@@ -30,4 +30,11 @@ export class ShowProfileComponent implements OnInit {
     console.log(this.skills);
   })
   }
+
+  showExp(data:any){
+    this.ps.postExperience(this.profileId,data).subscribe((Response:any)=>{
+      this.showExp=Response
+      console.log(this.showExp);
+    })
+  }
 }
