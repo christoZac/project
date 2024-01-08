@@ -13,8 +13,7 @@ export class ProfileService {
 
 
   getItem():any{
-    return localStorage.getItem('id')
-    
+    return localStorage.getItem('id')  
   }
 
   getProfile(){
