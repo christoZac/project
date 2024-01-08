@@ -14,8 +14,12 @@ export class getProfile{
 }
 
 export class Skill{
-    id:string | undefined;
+    id:string='';
     name!:string;
     description!:string;
 
 }
+
+// export class AddSkill{
+
+// // }

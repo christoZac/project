@@ -10,7 +10,10 @@ import { ProfileService } from '../../service/profile.service';
 })
 export class ShowProfileComponent implements OnInit {
   profileId!: string;
-  skills:Skill[]=[]
+  dropDownSkill:Skill[]=[];
+  skills:Skill[]=[];
+  selectedSkill: any;
+
   
 
   constructor(private route: ActivatedRoute, private ps:ProfileService) {}
@@ -22,6 +25,7 @@ export class ShowProfileComponent implements OnInit {
     });
 
     this.showSkill();
+    this.viewSkills()
   }
 
   showSkill(){
@@ -29,5 +33,21 @@ export class ShowProfileComponent implements OnInit {
       this.skills=response
     console.log(this.skills);
   })
+  }
+
+  viewSkills(){
+    this.ps.gettingSkills().subscribe((response)=>{
+      this.dropDownSkill=response
+      console.log(this.dropDownSkill);
+      
+    })
+  }
+
+  addSkill(profileId:any , id:any){
+    this.ps.postSkill(profileId,id).subscribe((response:any)=>{
+      this.skills=response
+      console.log(this.skills);
+  
+    })
   }
 }
