@@ -19,7 +19,6 @@ export class ProfileComponent {
     data.jobSeekerId=jobSeekerId;
     this.ps.addProfile(data).subscribe((response:any)=>{
       console.log(response);
- 
     })
 
     

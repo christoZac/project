@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { getProfile, profile } from '../model/profile';
+import { getProfile, profile, Skill } from '../model/profile';
 import { environment } from 'src/app/environment/environment';
 import { Observable } from 'rxjs';
 
@@ -28,6 +28,10 @@ export class ProfileService {
     return this.http.post(environment.baseUrl + 'v1/AddProfile', id);
   }
 
+  getSkill(profileId:any){
+    const jobSeekerId=this.getItem()
+    return this.http.get<Skill[]>(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills')
+  }
   
   
 }

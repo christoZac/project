@@ -3,11 +3,13 @@
     <div class="row">
         <div class="col-4 h-100" *ngFor="let list of profileData">
             <div class="card">
+        <div class="col-4" *ngFor="let list of profileData">
+            <div class="card h-100 shadow">
                 <div class="card-body">
-                    <h5>{{list.profileName}}</h5>
-                    <p>{{list.profileSummary}}</p>
+                    <h5>{{list.profileName | titlecase}}</h5>
+                    <p>{{list.profileSummary |titlecase}}</p>
                 </div>
-                <a routerLink="show"><button class="btn btn-primary">View</button></a>
+                <a [routerLink]="['../show',list.id]"><button  class="btn btn-primary" (click)="getId(list)">View</button></a>
 
             </div>
 

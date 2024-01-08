@@ -12,6 +12,7 @@ import { FindComponent } from './components/find/find.component';
 
 
 
+
 @NgModule({
   declarations: [
     SavedJobsComponent,
@@ -20,7 +21,8 @@ import { FindComponent } from './components/find/find.component';
     AlljobsParentComponent,
     AlljobsChildComponent,
     AllHomeComponent,
-    FindComponent
+    FindComponent,
+   
   ],
   imports: [
     CommonModule,
