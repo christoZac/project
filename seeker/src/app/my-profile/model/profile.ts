@@ -12,3 +12,10 @@ export class getProfile{
     profileSummary!:string;
     jobSeeker!:string;
 }
+
+export class Skill{
+    id:string | undefined;
+    name!:string;
+    description!:string;
+
+}

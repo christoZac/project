@@ -31,9 +31,5 @@ getId(data: getProfile): void {
     });
   }
 
-  getId(data: getProfile){
-    this.router.navigate(['/show'], {
-      queryParams: { id: data.id }
-    });
-  }
+ 
 }

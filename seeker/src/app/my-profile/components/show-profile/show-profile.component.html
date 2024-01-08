@@ -52,8 +52,12 @@
                         </div>
                         <div class="card-text mx-5 text-secondary mb-4">
                             <ul>
-                                <li>Operating systems windows 9x/NT/2000,DOS/Unix/LinuxIDE Tools:JBuilderDatabases:PL/SQLLangauges:Java, C, C++,C#,Asp.Net,PHP WebTechnologies:HTML,JSP,servlets,struts framework,PhotoshopApplication Servers: BEA Weblogic 7.0 Web servers: Tomcat 5.0,Apache</li>
-                            </ul>
+                                <li *ngFor="let skill of skills">
+                                  {{ skill.name }}<br>
+                                  {{ skill.description }}
+                                </li>
+                              </ul>
+                              
                         </div>
                         <hr>
                         <p class="d-flex justify-content-end">
