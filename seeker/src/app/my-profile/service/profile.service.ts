@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { getProfile, profile } from '../model/profile';
 import { environment } from 'src/app/environment/environment';
 import { Observable } from 'rxjs';
+import { profiles } from '../model/profile_model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,9 @@ export class ProfileService {
     return this.http.post(environment.baseUrl + 'v1/AddProfile', id);
   }
 
-  
+  jobSeekerProfile(){
+    const jobSeekerId=this.getItem()
+    return this.http.get(environment.baseUrl+'v1/'+jobSeekerId+'/profile')
+  }
   
 }

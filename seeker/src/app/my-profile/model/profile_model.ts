@@ -1,11 +1,4 @@
-export class profile{
-   
-    jobSeekerId:any | undefined;
-    profileName!:string;
-    profileSummary!:string;
-}
-
-export class getProfile{
+export class profiles{
     id:string=""
     resumeId:string="";
     jobSeekerId:string="";

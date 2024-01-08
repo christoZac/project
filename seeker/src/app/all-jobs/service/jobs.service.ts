@@ -18,7 +18,7 @@ export class JobsService {
     return this.http.post<job[]>(environment.baseUrl+'v1/job-seeker/SaveJob/'+data,data);
 
   }
-  // getSavedJob() {
-  //   return this.http.get<job[]>(environment.baseUrl+'v1/job-seeker/jobseekerId/savedjobs');
-  // }
+  getSavedJob() {
+    return this.http.get<job[]>(environment.baseUrl+'v1/job-seeker/jobseekerId/savedjobs');
+  }
 }

@@ -9,7 +9,15 @@
                         <div class="card-body text-center mt-4 ">
                             <img src="../../../../assets/images/Ellipse 1.png"> 
                         </div>
-                        <span class="fw-bold text-center">Leslie Alexander</span>
+                        
+                        <div *ngFor="let list of profileDatas">
+                           <h6 class="text-center">ProfileName:{{list.profileName | titlecase}}</h6> 
+                           <h6 class="text-center">ProfileSummary:  {{list.profileSummary | titlecase}}</h6> 
+                           
+                           
+                            
+                            </div>
+                        <!-- <span class="fw-bold text-center">Leslie Alexander</span>
                         <span class="text-secondary text-center pt-2 mb-4">UI/UX Designer</span>
                         <button class="btn  btn-sm mx-4 text-primary"id="resume"><img src="../../../../assets/images/upload 1.png">Resume</button>
                         <ul class="list-unstyled">
@@ -23,10 +31,11 @@
                             </li>
                             <li class="card-text pt-3 text-secondary mx-3 mb-2">
                                 <img src="../../../../assets/images/Vector.png" alt="">
-                                <span class="mx-2">location</span>
+                                <span class="mx-2">location</span> -->
                                 <a routerLink="./update"><span class="float-md-end"><img src="../../../../assets/images/icons8-pencil-drawing-32.png" alt=""></span></a>
-                            </li>
-                        </ul>
+                            <!-- </li>
+                        </ul> -->
+                        
                     </div>
                     <div class="row pt-3 mx-1">
                         <div class="card border mt-3">
@@ -114,16 +123,9 @@
             
         </div>
            
-       
+     
+      
 
 
     </div>
 
-    view Profile
- <!-- <div *ngFor="let list of profileData">
-        {{list.id}}
-        {{list.profileName}}
-        {{list.profileSummary}}
-        {{list.resumeId}}
-       
-    </div>  -->

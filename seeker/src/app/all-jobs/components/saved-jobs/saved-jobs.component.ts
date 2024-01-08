@@ -8,21 +8,17 @@ import { JobsService } from '../../service/jobs.service';
   styleUrls: ['./saved-jobs.component.css']
 })
 export class SavedJobsComponent {
-  // jobs: job[] = [];
-  // constructor(private jobService: JobsService) { }
-  // ngOnInit() {
-  //   this.getSaveds();
+  jobs: job[] = [];
+  constructor(private jobService: JobsService) { }
+  ngOnInit() {
+    this.getSaveds();
+  }
+  getSaveds() {
+    this.jobService.getSavedJob().subscribe((response: job[]) => {
+     this.jobs=response;
+      console.log(this.jobs);
 
-
-  // }
-  // getSaveds() {
-  //   this.jobService.getSavedJob().subscribe((response: job[]) => {
-
-    
-  //    this.jobs=response;
-  //     console.log(this.jobs);
-
-  //   });
-  // }
+    });
+  }
 
 }
