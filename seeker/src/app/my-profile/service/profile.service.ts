@@ -14,8 +14,7 @@ export class ProfileService {
 
 
   getItem():any{
-    return localStorage.getItem('id')
-    
+    return localStorage.getItem('id')  
   }
 
   getProfile(){
@@ -38,6 +37,11 @@ export class ProfileService {
     const jobSeekerId=this.getItem()
     return this.http.get<Skill[]>(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills')
   }
+<<<<<<< HEAD
+  postExperience(data:any,profileId:any){
+    const jobSeekerId=this.getItem()
+    return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experience',data)
+=======
 
   gettingSkills(){
     return this.http.get<Skill[]>(environment.baseUrl+'v1/skills')
@@ -48,6 +52,7 @@ export class ProfileService {
     const jobSeekerId=this.getItem()
     return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills',data)
 
+>>>>>>> d417220daa77d7a3672ee5e2449c7f7f25775301
   }
   
   

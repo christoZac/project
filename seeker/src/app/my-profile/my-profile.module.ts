@@ -4,8 +4,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { ProfileRoutingModule } from './routes/profile/profile-routing.module';
 import { ViewprofileComponent } from './components/viewprofile/viewprofile.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowProfileComponent } from './components/show-profile/show-profile.component';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 
 
@@ -14,12 +15,14 @@ import { ShowProfileComponent } from './components/show-profile/show-profile.com
     ProfileComponent,
     UpdateProfileComponent,
     ViewprofileComponent,
-    ShowProfileComponent
+    ShowProfileComponent,
+    ExperienceComponent
   ],
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MyProfileModule { }

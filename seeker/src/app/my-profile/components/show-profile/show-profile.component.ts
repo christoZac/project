@@ -54,6 +54,12 @@ export class ShowProfileComponent {
   })
   }
 
+<<<<<<< HEAD
+  showExp(data:any){
+    this.ps.postExperience(this.profileId,data).subscribe((Response:any)=>{
+      this.showExp=Response
+      console.log(this.showExp);
+=======
   viewSkills(){
     this.ps.gettingSkills().subscribe((response)=>{
       this.dropDownSkill=response
@@ -67,6 +73,7 @@ export class ShowProfileComponent {
       this.skills=response
       console.log(this.skills);
   
+>>>>>>> d417220daa77d7a3672ee5e2449c7f7f25775301
     })
   }
   
