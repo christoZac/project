@@ -19,6 +19,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     // const role = localStorage.getItem('role');
         const jobSeekerId = localStorage.getItem('id');
+        const id = localStorage.getItem('p_id');
 
 
 
@@ -29,7 +30,8 @@ export class AuthInterceptor implements HttpInterceptor {
           Authorization: `Bearer ${token}`,
           // 'id': provider_id ? provider_id : '', // Add user ID to the headers (if available)
           // role: role
-          'id':jobSeekerId ? jobSeekerId:''
+          'id':jobSeekerId ? jobSeekerId:'',
+          'p_id':id ? id:'',
         }
       });
 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { getProfile, profile } from '../model/profile';
+import { getProfile, profile, Skill } from '../model/profile';
 import { environment } from 'src/app/environment/environment';
 import { Observable } from 'rxjs';
 import { profiles } from '../model/profile_model';
@@ -34,5 +34,21 @@ export class ProfileService {
     const jobSeekerId=this.getItem()
     return this.http.get(environment.baseUrl+'v1/'+jobSeekerId+'/profile')
   }
+  getSkill(profileId:any){
+    const jobSeekerId=this.getItem()
+    return this.http.get<Skill[]>(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills')
+  }
+
+  gettingSkills(){
+    return this.http.get<Skill[]>(environment.baseUrl+'v1/skills')
+  }
+
+  postSkill(data:any,profileId:any)
+  {
+    const jobSeekerId=this.getItem()
+    return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills',data)
+
+  }
+  
   
 }

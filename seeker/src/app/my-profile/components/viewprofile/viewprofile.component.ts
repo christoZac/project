@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { getProfile, profile } from '../../model/profile';
+import { getProfile } from '../../model/profile';
 import { ProfileService } from '../../service/profile.service';
 import { profiles } from '../../model/profile_model';
 
@@ -12,8 +12,10 @@ import { profiles } from '../../model/profile_model';
 export class ViewprofileComponent {
   profileData: profiles[] = [];
   profileId!:string
+// export class ViewprofileComponent implements OnInit {
+//   profileData: getProfile[] = [];
 
-  constructor(private ps: ProfileService,private router:Router,private route: ActivatedRoute) {}
+  constructor(private ps: ProfileService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.showProfile();
@@ -24,12 +26,14 @@ getId(data: getProfile): void {
 }
 
   showProfile() {
-    this.ps.getProfile().subscribe((response: profiles[]) => {
+
+
+    this.ps.getProfile().subscribe((response: getProfile[]) => {
       this.profileData = response;
       console.log(this.profileData);
+
     });
   }
-  
-
-
 }
+
+ 
