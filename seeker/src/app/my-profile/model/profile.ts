@@ -20,7 +20,6 @@ export class Skill{
 
 }
 
-<<<<<<< HEAD
 export class Experience{
   jobTitle: string | undefined;
   companyName: string | undefined;
@@ -28,8 +27,6 @@ export class Experience{
   serviceStart: string | undefined;
   serviceEnd: string | undefined;
 }
-=======
 // export class AddSkill{
 
 // // }
->>>>>>> d417220daa77d7a3672ee5e2449c7f7f25775301

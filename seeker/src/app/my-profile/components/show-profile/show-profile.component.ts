@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Skill } from '../../model/profile';
+import { Skill, profile } from '../../model/profile';
 import { ProfileService } from '../../service/profile.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class ShowProfileComponent implements OnInit {
   profileId!: string;
   dropDownSkill:Skill[]=[];
   skills:Skill[]=[];
+  profileData:profile[]=[];
   selectedSkill: any;
 
   
@@ -35,12 +36,6 @@ export class ShowProfileComponent implements OnInit {
   })
   }
 
-<<<<<<< HEAD
-  showExp(data:any){
-    this.ps.postExperience(this.profileId,data).subscribe((Response:any)=>{
-      this.showExp=Response
-      console.log(this.showExp);
-=======
   viewSkills(){
     this.ps.gettingSkills().subscribe((response)=>{
       this.dropDownSkill=response
@@ -54,7 +49,6 @@ export class ShowProfileComponent implements OnInit {
       this.skills=response
       console.log(this.skills);
   
->>>>>>> d417220daa77d7a3672ee5e2449c7f7f25775301
     })
   }
 }

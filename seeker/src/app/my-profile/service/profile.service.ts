@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { getProfile, profile, Skill } from '../model/profile';
+import { Experience, getProfile, profile, Skill } from '../model/profile';
 import { environment } from 'src/app/environment/environment';
 import { Observable } from 'rxjs';
 
@@ -32,11 +32,6 @@ export class ProfileService {
     const jobSeekerId=this.getItem()
     return this.http.get<Skill[]>(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills')
   }
-<<<<<<< HEAD
-  postExperience(data:any,profileId:any){
-    const jobSeekerId=this.getItem()
-    return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experience',data)
-=======
 
   gettingSkills(){
     return this.http.get<Skill[]>(environment.baseUrl+'v1/skills')
@@ -47,8 +42,11 @@ export class ProfileService {
     const jobSeekerId=this.getItem()
     return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills',data)
 
->>>>>>> d417220daa77d7a3672ee5e2449c7f7f25775301
   }
   
-  
+  postExperience(profileId:any,data:any){
+    const jobSeekerId=this.getItem()
+    return this.http.post<Experience[]>(environment.baseUrl+'v1/'+jobSeekerId/+'/profile/'+profileId+'/Experience',data)
+
+  }
 }
