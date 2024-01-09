@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProfileService } from '../../service/profile.service';
 import { Experience } from '../../model/profile';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-experience',
@@ -17,7 +18,7 @@ export class ExperienceComponent {
     experience:Experience[]=[];
     
    
-  constructor(private formBuilder: FormBuilder, private profile:ProfileService ) { }
+  constructor(private formBuilder: FormBuilder, private profile:ProfileService ,private route: ActivatedRoute) { }
   
     ngOnInit() {
       this.addexperienceform = this.formBuilder.group({
@@ -27,12 +28,11 @@ export class ExperienceComponent {
        end: ['', Validators.required],
        status: ['', Validators.required],
       
-        
-       
        
       });
        
     }
+
 
     showExp(data:any){
       this.profile.postExperience(this.profile,data).subscribe((Response:any)=>{
