@@ -7,10 +7,18 @@
                 <div class="col-md-5">
                     <div class="card border">
                         <div class="card-body text-center mt-4 ">
-                            <img src="../../../../assets/images/Ellipse 1.png"> 
+                            <img src="../../../../assets/images/Ellipse 1.png"><br> 
+                            <div *ngFor="let list of profileDatas">
+                                <span class="fw-bold text-center">{{list.profileName | titlecase}}</span><br>
+                               <span class="text-secondary text-center pt-2 mb-4">{{list.profileSummary | titlecase}}</span>
                         </div>
-                        <span class="fw-bold text-center">Leslie Alexander</span>
-                        <span class="text-secondary text-center pt-2 mb-4">UI/UX Designer</span>
+                        
+                        
+                           
+                           
+                            
+                            </div>
+                            
                         <button class="btn  btn-sm mx-4 text-primary"id="resume"><img src="../../../../assets/images/upload 1.png">Resume</button>
                         <ul class="list-unstyled">
                             <li class="card-text pt-3 text-secondary mx-3 ">
@@ -26,7 +34,8 @@
                                 <span class="mx-2">location</span>
                                 <a routerLink="./update"><span class="float-md-end"><img src="../../../../assets/images/icons8-pencil-drawing-32.png" alt=""></span></a>
                             </li>
-                        </ul>
+                        </ul> 
+                        
                     </div>
                     <div class="row pt-3 mx-1">
                         <div class="card border mt-3">
@@ -55,13 +64,13 @@
                             <img src="../../../../assets/images/light-bulb 1.png">
                             <span class="fw-bold mx-2">Skills</span> 
                             <span>
-                                <select name="" id="" class="form-control w-50" [(ngModel)]="selectedSkill">  
+                                <select name="" id="" class="form-control w-50" [(ngModel)]="skills">  
                                   <option value="" *ngFor="let list of dropDownSkill">
                                     <p>{{ list.name }}
                                     </p>
                                   </option>
                                 </select>
-                                <button class="btn btn-success" (click)="addSkill(selectedSkill,profileId)">ADD</button> 
+                                <button class="btn btn-success" (click)="addSkill(skills,profileId)">ADD</button> 
                               </span>
                         </div>
                         <div class="card-text mx-5 text-secondary mb-4">
@@ -79,7 +88,7 @@
 
 
 
-                        <hr>
+                         <hr>
                         <p class="d-flex justify-content-end">
                             <img src="../../../../assets/images/icons8-pencil-drawing-32.png">
                             <i class="bi bi-three-dots"></i>
@@ -118,8 +127,17 @@
                         <div class="card-body ">
                             <img src="../../../../assets/images/portfolio 2.png">
                             <span class="fw-bold mx-2">Experience</span> 
-                             <a routerLink="/experience"><button class=" rounded bg-primary d-flex float-end border-0 text-white"> Add</button></a>
+                             <a routerLink="/experience"><button class=" rounded bg-primary d-flex float-end border-0 text-white" > Add</button></a>
+                             <div *ngFor="let list of experience">
+                              
+                                <li>{{list.jobTitle}}</li>
+                                <li>{{list.companyName}}</li>
+                                <li>{{list.summary}}</li>
+                                <li>{{list.serviceStart}}</li>
+                             </div>
                         </div>
+                       
+
 
                         <hr>
                         <p class="d-flex justify-content-end">
@@ -132,16 +150,18 @@
             
         </div>
            
-       
+     
+      
 
 
     </div>
 
-    view Profile
+    <!-- view Profile
   <div *ngFor="let list of profileData">
         {{list.id}}
         {{list.profileName}}
         {{list.profileSummary}}
         {{list.resumeId}}
        
-    </div>  
+    </div>    -->
+    <router-outlet></router-outlet>

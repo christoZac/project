@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProfileService } from '../../service/profile.service';
 import { Experience } from '../../model/profile';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-experience',
@@ -17,28 +18,28 @@ export class ExperienceComponent {
     experience:Experience[]=[];
     
    
-  constructor(private formBuilder: FormBuilder, private profile:ProfileService ) { }
+  constructor(private formBuilder: FormBuilder, private profile:ProfileService ,private route: ActivatedRoute) { }
   
     ngOnInit() {
       this.addexperienceform = this.formBuilder.group({
-        name: ['', Validators.required],
-       task: ['', Validators.required],
-       start: ['', Validators.required],
-       end: ['', Validators.required],
-       status: ['', Validators.required],
-      
-        
+        jobTitle: ['', Validators.required],
+        companyName: ['', Validators.required],
+        summary: ['', Validators.required],
+        serviceStart: ['', Validators.required],
+        serviceEnd: ['', Validators.required],
        
        
       });
        
     }
 
+
     showExp(data:any){
-      this.profile.postExperience(this.profile,data).subscribe((Response:any)=>{
-        this.showExp=Response
-        console.log(this.showExp);
+      this.profile.postexperience(this.profile,data).subscribe((Response:any)=>{
+        this.experience=Response
+        console.log(this.experience);
       })
+      alert("hello")
     }
 
 

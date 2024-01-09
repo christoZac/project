@@ -11,8 +11,10 @@ const routes: Routes = [
   {path:'profile', component:ProfileComponent},
   {path:'update', component:UpdateProfileComponent},
   {path:'viewProfile', component:ViewprofileComponent},
-  { path: 'show/:id', component: ShowProfileComponent },
-  {path:'experience',component:ExperienceComponent}
+  {path: 'show/:id', component: ShowProfileComponent },
+  {path:'experience', component:ExperienceComponent },
+  {path:'show/:id', component:ShowProfileComponent },
+  
 
 ];
 

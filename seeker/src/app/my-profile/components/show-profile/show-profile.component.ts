@@ -1,32 +1,53 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Skill, profile } from '../../model/profile';
 import { ProfileService } from '../../service/profile.service';
+import { profiles } from '../../model/profile_model';
+import { Experience, Skill, profile, resume } from '../../model/profile';
 
 @Component({
   selector: 'app-show-profile',
   templateUrl: './show-profile.component.html',
   styleUrls: ['./show-profile.component.css']
 })
-export class ShowProfileComponent implements OnInit {
+export class ShowProfileComponent {
   profileId!: string;
   dropDownSkill:Skill[]=[];
   skills:Skill[]=[];
   profileData:profile[]=[];
   selectedSkill: any;
+  experience:Experience[]=[];
 
-  
+  resumes:resume[]=[]
+  profileDatas:profiles[] = [];
 
-  constructor(private route: ActivatedRoute, private ps:ProfileService) {}
+  constructor(private route: ActivatedRoute, private ps: ProfileService) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.profileId = params['id'];
       console.log('ID:', this.profileId);
+      
+    });
+    this.getProfile();
+  }
+  getProfile() {
+    this.ps.jobSeekerProfile().subscribe((response: any) => {
+     
+      if (Array.isArray(response)) {
+      
+        this.profileDatas = response;
+      } else if (typeof response === 'object' && response !== null) {
+       
+        this.profileDatas = [response];
+      } 
+  
+      console.log(this.profileDatas);
     });
 
     this.showSkill();
     this.viewSkills()
+    this.getexp();
   }
 
   showSkill(){
@@ -51,4 +72,23 @@ export class ShowProfileComponent implements OnInit {
   
     })
   }
+  getexp(){
+    this.ps.experienceget(this.profileId).subscribe((response:any)=>{
+      this.experience=response
+      console.log(this.experience);
+
+  })
+  
+     
+  }
+  getresume(){
+    this.ps.resumeget(this.profileId).subscribe((response:any)=>{
+      this. resumes=response
+      console.log(this. resumes);
+
+  })
+  
+     
+  }
+  
 }

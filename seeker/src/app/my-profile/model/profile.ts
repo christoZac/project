@@ -1,16 +1,17 @@
 export class profile{
+   
     jobSeekerId:any | undefined;
     profileName!:string;
     profileSummary!:string;
 }
 
 export class getProfile{
-    id!:string;
-    resumeId!:string;
-    jobSeekerId!:string;
-    profileName!:string;
-    profileSummary!:string;
-    jobSeeker!:string;
+    id:string=""
+    resumeId:string="";
+    jobSeekerId:string="";
+    profileName:string="";
+    profileSummary:string="";
+    jobSeeker:string="";
 }
 
 export class Skill{
@@ -21,12 +22,21 @@ export class Skill{
 }
 
 export class Experience{
-  jobTitle: string | undefined;
-  companyName: string | undefined;
-  summary: string | undefined;
-  serviceStart: string | undefined;
-  serviceEnd: string | undefined;
+    jobSeekerProfileId:string="";
+    jobTitle: string="";
+    companyName:string="";
+    summary: string="";
+    serviceStart: string="";
 }
-// export class AddSkill{
-
-// // }
+export class Experiences{
+jobTitle: string="";
+  companyName: string="";
+  summary: string="";
+  serviceStart:string="";
+  serviceEnd: string="";
+}
+export class resume{
+    id: string="";
+    title: string="";
+    file: string="";
+    }

@@ -27,9 +27,9 @@ export class AlljobsParentComponent {
     });
   }
 
-  saveJob(data:any){
-    console.log(data)
 
+  saveJob(data:any){
+  
     this.jobService.postSaved(data).subscribe((response ) => { 
        this.save=response;
        console.log(this.save)
