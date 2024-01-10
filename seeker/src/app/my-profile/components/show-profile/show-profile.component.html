@@ -18,7 +18,11 @@
                            
                             
                             </div>
-                            
+                            <div *ngFor="let list of   resumes">
+                                <!-- {{list.profileName}} -->
+                                {{list.title}}
+
+                            </div>
                         <button class="btn  btn-sm mx-4 text-primary"id="resume"><img src="../../../../assets/images/upload 1.png">Resume</button>
                         <ul class="list-unstyled">
                             <li class="card-text pt-3 text-secondary mx-3 ">
@@ -164,4 +168,4 @@
         {{list.resumeId}}
        
     </div>    -->
-    <router-outlet></router-outlet>
+    <!-- <router-outlet></router-outlet> -->

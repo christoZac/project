@@ -30,6 +30,7 @@ export class ShowProfileComponent {
       
     });
     this.getProfile();
+    this.getresume()
   }
   getProfile() {
     this.ps.jobSeekerProfile().subscribe((response: any) => {
