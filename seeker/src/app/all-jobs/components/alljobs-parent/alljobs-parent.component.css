@@ -1,7 +1,9 @@
 .btn1{
-    background-color: rgba(18, 56, 82, 0.719);
-    color: white;
-    height: 30px;
-    font-size: 12px;
-}
+   
+        height: 30px;
+        width: 100px;
+        background-color: chocolate;
+        /* background: linear-gradient(-60deg, hsl(288, 88%, 26%) 2%, hsl(180, 89%, 31%) 30%); */
+        }
+    
 

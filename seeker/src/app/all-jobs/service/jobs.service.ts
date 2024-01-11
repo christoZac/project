@@ -14,8 +14,9 @@ export class JobsService {
     return this.http.get<job[]>(environment.baseUrl+'v1/jobs');
   }
 
-  postSaved(data:any){
-    return this.http.post<job[]>(environment.baseUrl+'v1/job-seeker/SaveJob/'+data,data);
+  postSaved(jobId:any,data:any){
+    // const jobId=data
+    return this.http.post<job[]>(environment.baseUrl+'v1/job-seeker/SaveJob/'+jobId,data);
 
   }
   getSavedJob() {

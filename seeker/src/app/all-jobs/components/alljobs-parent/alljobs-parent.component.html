@@ -18,17 +18,17 @@
         </li>
       </div>
   
-      <div *ngFor="let list of jobs" class="card border-0 shadow">
+      <div  *ngFor="let list of jobs" class="card  w-75  mt-3 p-2 border-0 black shadow">
         <div class="card-body"><button class="btn btn-primary border rounded float-end"(click)="saveJob(list.id)">Save</button>
           <img src="../../../../assets/images/Rectangle 14.png" alt="image1">
           <span class="ms-4 fw-bold">{{ list.jobTitle | titlecase }}</span>
           <p class="c_name text-info">{{ list.jobSummary | titlecase  }}</p>
           <p class="card-text">Posted Date: {{ list.postedDate | titlecase  }}</p>
-          <div class="btn btn1 border rounded-pill">Full-Time</div>
-          <div class="btn btn1 border rounded-pill">Mid Level</div>
-          <div class="btn btn1 border rounded-pill">$3000-$5000</div>
-          <div class="btn btn1 border rounded-pill">save</div>
-          <div class="btn btn1 border rounded-pill">Onsite</div>
+          <div class="btn btn1 border rounded">Full-Time</div>
+          <div class="btn btn1 border rounded">Mid Level</div>
+          <div class="btn btn1 border rounded">$3000</div>
+          <div class="btn btn1 border rounded">save</div>
+          <div class="btn btn1 border rounded">Onsite</div>
         </div>
       </div>
   
