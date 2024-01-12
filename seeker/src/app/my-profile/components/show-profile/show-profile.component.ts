@@ -44,7 +44,7 @@ export class ShowProfileComponent {
       serviceEnd: [''],
     })
     this.getProfile();
-
+    this.getresume()
   }
   getProfile() {
     this.ps.jobSeekerProfile().subscribe((response: any) => {

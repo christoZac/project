@@ -56,7 +56,7 @@ experienceget(profileId:any){
 
   resumeget(profileId:any){
     
-      return this.http.get(environment.baseUrl+"v1/job-seeker/getResume/"+profileId)
+      return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
     }
 
     postQualification(profileId:any,data:any){
