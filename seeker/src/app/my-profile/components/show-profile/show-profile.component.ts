@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProfileService } from '../../service/profile.service';
 import { profiles } from '../../model/profile_model';
-import { Experience, Skill, profile, resume } from '../../model/profile';
+import { Experience, Skill, profile, qualifications, resume } from '../../model/profile';
 
 @Component({
   selector: 'app-show-profile',
@@ -17,9 +17,9 @@ export class ShowProfileComponent {
   profileData:profile[]=[];
   selectedSkill: any;
   experience:Experience[]=[];
-
   resumes:resume[]=[]
   profileDatas:profiles[] = [];
+  qualification:qualifications[]=[]
 
   constructor(private route: ActivatedRoute, private ps: ProfileService) {}
 
@@ -82,14 +82,32 @@ export class ShowProfileComponent {
   
      
   }
-  getresume(){
-    this.ps.resumeget(this.profileId).subscribe((response:any)=>{
+getresume(){
+ this.ps.getResume(this.profileId).subscribe((response:any)=>{
       this. resumes=response
-      console.log(this. resumes);
+    console.log(this. resumes);
 
-  })
+   })
   
      
+ }
+  addQualification(data:any){
+    // console.log(data);
+    const profileID=this.profileId
+    
+    this.ps.postQualification(profileID,data).subscribe((response:any)=>{
+      this.qualification=response;
+      console.log(this.qualification);
+    })
+
+  }
+  
+  addResume(data:any){
+    alert("hello")
+    const profileID=this.profileId
+    this.ps.postResume(profileID,data).subscribe((response:any)=>{
+      this.resumes=response
+    })
   }
   
 }

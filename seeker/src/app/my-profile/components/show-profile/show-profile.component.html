@@ -18,16 +18,24 @@
                            
                             
                             </div>
-                            <div *ngFor="let list of   resumes">
-                                <!-- {{list.profileName}} -->
-                                {{list.title}}
+                        <!-- <div *ngFor="let list of   resumes">
+                             
+                                 {{list.title}}
 
-                            </div>
+                           </div>  -->
+
                         <button class="btn  btn-sm mx-4 text-primary"id="resume"><img src="../../../../assets/images/upload 1.png">Resume</button>
+                    <div *ngFor="let list of resumes">
+  <button (click)="addResume(list)">Add</button>
+
+</div>
+                    
+                        <input  type="file">
                         <ul class="list-unstyled">
+                    
                             <li class="card-text pt-3 text-secondary mx-3 ">
                                 <img src="../../../../assets/images/sms.png">
-                                <span class="mx-2">lesliealexander@mail.com </span> 
+                                <span class="mx-2">lesliealexander gmail.com </span> 
                             </li>
                             <li class="card-text pt-3 text-secondary mx-3">
                                 <img src="../../../../assets/images/call.png">
@@ -122,10 +130,29 @@
                             </ul>
                         </div>
                         <hr>
-                        <p class="d-flex justify-content-end">
-                            <img src="../../../../assets/images/icons8-pencil-drawing-32.png">
-                            <i class="bi bi-three-dots"></i>
-                        </p>
+                        <button type="button" class="btn btn-primary w-25" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add</button>                        
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <form #qForm="ngForm">
+                                  <div class="mb-3">
+                                    <input type="text" placeholder="Name"  name="name" class="form-control" id="recipient-name" ngModel>
+                                  </div>
+                                  <div class="mb-3">
+                                    <textarea class="form-control" name="description" placeholder="Description" id="message-text" ngModel></textarea>
+                                  </div>
+                                </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" (click)="addQualification(qForm.value)">Add</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                     <div class="card border mt-3">
                         <div class="card-body ">

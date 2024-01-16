@@ -36,7 +36,12 @@ jobTitle: string="";
   serviceEnd: string="";
 }
 export class resume{
-    id: string="";
+id: string="";
     title: string="";
     file: string="";
     }
+
+export class qualifications{
+    name: string="";
+  description:string="";
+}

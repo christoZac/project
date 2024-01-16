@@ -2,13 +2,14 @@
     <div class="row ">
       <div class="col-lg-7 col-md-12 ">
         <p class="fs-5 fw-bold mt-2">My Application</p>
-          <div class="card border-0 shadow">
-           <div class="card-body " >
+          <div class="card border-0 " >
+            <div *ngFor="let list of application">
+           <div class="card-body shadow mt-3" >
             <img src="../../../../assets/images/aitrich.png" alt="image1">
-            <span class="ms-4  fw-bold">MERN Stack Intern</span>
-            <p class="c_name text-info">Aitritch Technologies &#8226; Location</p>
-           <p class="card-text">We are looking for a UI/UX Designer to turn our software into easy-to-use products
-            for our clients.</p>
+            
+            <span class="ms-4  fw-bold">  {{list.jobPostJobTitle}}</span>
+            <p class="card-text"><b>jobSummary:</b> {{list.jobPostJobSummary}}</p>
+            <p class="card-text"><b>CompanyName:</b> {{list.jobPostCompanyLegalName}}</p>
             <div class="btn btn1 border rounded-pill">Full-Time</div>
             <div class="btn btn1 border rounded-pill">Mid Level</div>
             <div class="btn btn1 border rounded-pill">$3000-$5000</div>
@@ -16,6 +17,7 @@
             <div class="btn btn1 border rounded-pill">Onsite</div>
            </div>
             </div>
+          </div>
           
             
               

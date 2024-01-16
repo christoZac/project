@@ -1,7 +1,11 @@
 .btn1{
-    background-color: rgba(18, 56, 82, 0.719);
+    background-color: rgb(255, 68, 10);
     color: white;
     height: 30px;
     font-size: 12px;
+   
+    display: inline-block;
+    margin-right: 18px;
+
 }
 

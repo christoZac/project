@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { job } from '../../model/job';
+import { applyJob, job, savedjobs } from '../../model/job';
 import { JobsService } from '../../service/jobs.service';
 import { saved } from '../../model/save';
 
@@ -10,7 +10,8 @@ import { saved } from '../../model/save';
 })
 export class AlljobsParentComponent {
   jobs: job[] = [];
-  save: job[] = [];
+  save: savedjobs[] = [];
+  apply:applyJob[]=[];
   constructor(private jobService: JobsService) { }
   ngOnInit() {
     this.getJobs();
@@ -28,15 +29,33 @@ export class AlljobsParentComponent {
   }
 
 
-  saveJob(data:any){
+  saveJob(id: string) {
+    this.jobService.postSaved(id).subscribe(
+      (response: any) => {
+        this.save = response;
+        console.log(this.save);
+      },
+      (error) => {
+        console.error(error);
   
-    this.jobService.postSaved(data).subscribe((response ) => { 
-       this.save=response;
-       console.log(this.save)
- 
-     });
-    
-
-
+        if (error.status === 200 && error.statusText === 'OK') {
+          
+          console.log('Job saved successfully');
+        
+        } else {
+         
+        }
+      }
+    );
   }
+  
+  
+ 
+  // applyJob(data:any){
+  //   this.jobService.postJobapplication(data).subscribe((response:any)=>{
+  //     this.apply=response
+  //     console.log(this.apply)
+
+  //   });
+  // }
 }

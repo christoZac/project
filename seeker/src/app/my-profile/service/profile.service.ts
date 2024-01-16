@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Experience, Experiences, getProfile, profile, Skill } from '../model/profile';
+import { Experience, Experiences, getProfile, profile, resume, Skill } from '../model/profile';
 import { environment } from 'src/app/environment/environment';
 import { Observable } from 'rxjs';
 import { profiles } from '../model/profile_model';
@@ -59,9 +59,29 @@ experienceget(profileId:any){
     return this.http.get(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experince')
   }
 
-  resumeget(profileId:any){
-    
-      return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
-    }
+
+postQualification(profileId:any,data:any){
+  
+  const jobSeekerId=this.getItem()
+  return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Qualification',data)
+
+
+}
+getResume(profileId:any){
+  return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
 }
 
+postResume(profileID:any,file:any){
+
+  const headers = new HttpHeaders({
+    'profileName': 'string', 
+    'profileSummary': 'string',
+    'title': 'string',
+    
+  });
+  const formData = new FormData();
+  formData.append('file', file);
+  return this.http.post<resume[]>(environment.baseUrl+'v1/job-seeker/upload-resume'+{headers},formData)
+
+}
+}
