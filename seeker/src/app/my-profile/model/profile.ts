@@ -14,27 +14,42 @@ export class getProfile{
     jobSeeker:string="";
 }
 
+
+
+
+
 export class Skill{
-    id:string='';
+    id:string | undefined
     name!:string;
     description!:string;
 
+
 }
 
+
+
+
+
+
+
+
 export class Experience{
-    jobSeekerProfileId:string="";
+    
     jobTitle: string="";
     companyName:string="";
     summary: string="";
-    serviceStart: string="";
+    serviceStart: any;
+    serviceEnd:any ;
 }
-export class Experiences{
-jobTitle: string="";
-  companyName: string="";
-  summary: string="";
-  serviceStart:string="";
-  serviceEnd: string="";
-}
+
+// export class Experiences{
+//   jobSeekerProfileId:string="";
+//   jobTitle:string="";
+//   companyName:string="";
+//   summary:string="";
+//   serviceStart:string="";
+//   serviceEnd:string="";
+// }
 export class resume{
 id: string="";
     title: string="";

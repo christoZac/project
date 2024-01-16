@@ -29,6 +29,7 @@ export class AlljobsParentComponent {
   }
 
 
+<<<<<<< HEAD
   saveJob(id: string) {
     this.jobService.postSaved(id).subscribe(
       (response: any) => {
@@ -58,4 +59,19 @@ export class AlljobsParentComponent {
 
   //   });
   // }
+=======
+  saveJob(data:any){
+    
+  
+    this.jobService.postSaved(data,data).subscribe((response ) => { 
+       this.save=response;
+       console.log(this.save)
+ 
+     });
+    
+
+
+  }
+ 
+>>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
 }

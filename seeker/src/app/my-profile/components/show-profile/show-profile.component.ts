@@ -3,7 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProfileService } from '../../service/profile.service';
 import { profiles } from '../../model/profile_model';
+<<<<<<< HEAD
 import { Experience, Skill, profile, qualifications, resume } from '../../model/profile';
+=======
+import { Experience, Skill, profile, resume} from '../../model/profile';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+>>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
 
 @Component({
   selector: 'app-show-profile',
@@ -19,16 +24,32 @@ export class ShowProfileComponent {
   experience:Experience[]=[];
   resumes:resume[]=[]
   profileDatas:profiles[] = [];
+<<<<<<< HEAD
   qualification:qualifications[]=[]
+=======
+  addexperience!: FormGroup;
+  submitted=false;
+  qualification:Experience[]=[]
+  // adddata:Experiences[]=[];
+  // experience:Experience[]=[];
+>>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
 
-  constructor(private route: ActivatedRoute, private ps: ProfileService) {}
+  constructor(private route: ActivatedRoute, private ps: ProfileService,private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.profileId = params['id'];
       console.log('ID:', this.profileId);
       
+      
     });
+    this.addexperience = this.formBuilder.group({
+      jobTitle: [''],
+      companyName: [''],
+      summary: [''],
+      serviceStart: [''],
+      serviceEnd: [''],
+    })
     this.getProfile();
     this.getresume()
   }
@@ -66,18 +87,26 @@ export class ShowProfileComponent {
     })
   }
 
-  addSkill(profileId:any , id:any){
-    this.ps.postSkill(profileId,id).subscribe((response:any)=>{
-      this.skills=response
-      console.log(this.skills);
-  
-    })
+  addSkill(id:any){
+    this.showSkill();
+    console.log(id);
+    const profileId=this.profileId  
+    this.ps.postSkill(profileId,id).subscribe((response)=>{
+      console.log(profileId);
+      
+      console.log(response);
+     
+    })  
+    
   }
   getexp(){
     this.ps.experienceget(this.profileId).subscribe((response:any)=>{
       this.experience=response
-      console.log(this.experience);
+      console.log(this.qualification);
 
+  },
+  (error) => {
+    console.error("Failed to add skills:", error);
   })
   
      
@@ -110,4 +139,14 @@ getresume(){
     })
   }
   
+  addexp(data:any){
+    console.log(data)
+    this.profileId=this.profileId
+    this.ps.postQualification(this.profileId,data).subscribe((response:any)=>{
+      this.experience=response;
+      console.log(this.qualification)
+
+    })
+  
+  }
 }

@@ -4,7 +4,6 @@ import { ProfileComponent } from '../../components/profile/profile.component';
 import { ShowProfileComponent } from '../../components/show-profile/show-profile.component';
 import { UpdateProfileComponent } from '../../components/update-profile/update-profile.component';
 import { ViewprofileComponent } from '../../components/viewprofile/viewprofile.component';
-import { ExperienceComponent } from '../../components/experience/experience.component';
 
 const routes: Routes = [
   {path:'', component:ProfileComponent},
@@ -12,7 +11,6 @@ const routes: Routes = [
   {path:'update', component:UpdateProfileComponent},
   {path:'viewProfile', component:ViewprofileComponent},
   {path: 'show/:id', component: ShowProfileComponent },
-  {path:'experience', component:ExperienceComponent },
   {path:'show/:id', component:ShowProfileComponent },
   
 

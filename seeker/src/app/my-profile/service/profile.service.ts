@@ -1,6 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+<<<<<<< HEAD
 import { Experience, Experiences, getProfile, profile, resume, Skill } from '../model/profile';
+=======
+import { Experience,getProfile,profile,Skill} from '../model/profile';
+>>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
 import { environment } from 'src/app/environment/environment';
 import { Observable } from 'rxjs';
 import { profiles } from '../model/profile_model';
@@ -42,23 +46,19 @@ export class ProfileService {
     return this.http.get<Skill[]>(environment.baseUrl+'v1/skills')
   }
 
-  postSkill(data:any,profileId:any)
-  {
+  postSkill(profileId:string,id:string){
     const jobSeekerId=this.getItem()
-    return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills',data)
-
+    const requestbody=[id]
+    return this.http.post<Skill[]>(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills',requestbody)
   }
   
-  postexperience(profileId:any,data:any){
-    const jobSeekerId=this.getItem()
-    return this.http.post<Experiences[]>(environment.baseUrl+'v1/'+jobSeekerId/+'/profile/'+profileId+'/Experience',data)
 
-  }
 experienceget(profileId:any){
   const jobSeekerId=this.getItem()
     return this.http.get(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experince')
   }
 
+<<<<<<< HEAD
 
 postQualification(profileId:any,data:any){
   
@@ -69,6 +69,18 @@ postQualification(profileId:any,data:any){
 }
 getResume(profileId:any){
   return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
+=======
+  resumeget(profileId:any){
+    
+      return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
+    }
+
+    postQualification(profileId:any,data:any){
+      const jobSeekerId=this.getItem()
+      
+      return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experience',data)
+    }
+>>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
 }
 
 postResume(profileID:any,file:any){
