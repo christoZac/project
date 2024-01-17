@@ -1,40 +1,8 @@
-<div >
-    <div class="card shawdow w-75 mt-5 ml-5">
-        <form [formGroup]="addexperienceform">
-            <label class="ml-3 mt-3 " for="jobTitle">JobTitle</label>
-            <input type="text" class="form-control py-4 ml-3 w-50  mt-3" formControlName="jobTitle" placeholder="Please enter your jobTitle">
-            <div class="ml-4 mt-2" *ngIf="submitted && addexperienceform.controls['jobTitle'].errors"style="color: crimson;">please enter your JobTitle
-        
-            </div>
-          
-            <label class="ml-3  mt-3" for="companyName">CompanyName</label>
-            <input type="text" class="form-control py-4  w-50  ml-3  mt-3 " formControlName="companyName" placeholder="Please enter your companyName">
-            <div class="ml-4 mt-2" *ngIf="submitted && addexperienceform.controls['companyName'].errors"style="color: crimson;">please enter your companyName
-        
-            </div>
-    
-    
-            <label class="ml-3  mt-3" for="summary">summary</label>
-            <input type="text" class="form-control py-4  w-50  ml-3  mt-3 " formControlName="summary" placeholder="Please enter your summary">
-            <div class="ml-4 mt-2" *ngIf="submitted && addexperienceform.controls['summary'].errors"style="color: crimson;">please enter your summary
-        
-            </div>
-    
-            <label class="ml-3  mt-3" for="serviceStart">serviceStart</label>
-            <input type="text" class="form-control py-4  w-50  ml-3  mt-3 " formControlName="serviceStart" placeholder="Please enter your serviceStart">
-            <div class="ml-4 mt-2" *ngIf="submitted && addexperienceform.controls['serviceStart'].errors"style="color: crimson;">please enter your serviceStart
-        
-            </div>
-    
-            <label class="ml-3  mt-3" for="serviceEnd">serviceEnd</label>
-            <input type="text" class="form-control py-4  w-50  ml-3  mt-3 " formControlName="serviceEnd" placeholder="Please enter your serviceEnd">
-            
-         
-            <button class="btn bg-primary mt-3 ml-4 text-white  mt-3">submit</button>
-          </form> <br>
-        </div>
-       <a routerLink=""> <button class="btn bg-info mt-5 ml-2 text-white" >Back</button></a>
+
+    <div class="card shawdow w-75 mt-5 ms-5 ">
+       
+        <!-- <a> <button class="btn bg-info mt-5 ml-2 text-white"  routerLink='/show' >Back</button></a> -->
         
         
 
-</div>
+    

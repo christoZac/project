@@ -10,3 +10,9 @@ export class job{
     postedDate: string="";
   
   }
+  export class savedjobs{
+    dateSaved:string="";
+  }
+  export class applyJob{
+    message:string="";
+  }

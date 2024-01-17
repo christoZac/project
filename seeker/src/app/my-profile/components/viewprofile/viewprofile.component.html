@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="container">
     <div class="row">
         <div class="col-4 h-100" *ngFor="let list of profileData">
@@ -13,6 +13,20 @@
 
             </div>
 
+        </div>
+    </div>
+</div> -->
+
+<div class="containetr">
+    <div class="row">
+        <div class="col-4 mt-3"   *ngFor="let list of profileData">
+            <div class="card  h-100 w-75 mx-auto shadow">
+                <div class="card-body text-center ">
+                    <h5 >{{list.profileName | titlecase}}</h5>
+                    <p>{{list.profileSummary |titlecase}}</p>
+                    <a [routerLink]="['../show',list.id]"><button  class="btn btn-primary" (click)="getId(list)">View</button></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

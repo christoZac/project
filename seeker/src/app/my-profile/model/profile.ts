@@ -14,20 +14,53 @@ export class getProfile{
     jobSeeker:string="";
 }
 
+
+
+
+
 export class Skill{
+<<<<<<< HEAD
     id!:string;
+=======
+    id:string | undefined
+>>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
     name!:string;
     description!:string;
 
+
 }
+
+
+
+
+
+
+
 
 export class Experience{
-  jobTitle: string | undefined;
-  companyName: string | undefined;
-  summary: string | undefined;
-  serviceStart: string | undefined;
-  serviceEnd: string | undefined;
+    
+    jobTitle: string="";
+    companyName:string="";
+    summary: string="";
+    serviceStart: any;
+    serviceEnd:any ;
 }
-// export class AddSkill{
 
-// // }
+// export class Experiences{
+//   jobSeekerProfileId:string="";
+//   jobTitle:string="";
+//   companyName:string="";
+//   summary:string="";
+//   serviceStart:string="";
+//   serviceEnd:string="";
+// }
+export class resume{
+id: string="";
+    title: string="";
+    file: string="";
+    }
+
+export class qualifications{
+    name: string="";
+  description:string="";
+}

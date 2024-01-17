@@ -1,7 +1,21 @@
 .btn1{
-    background-color: rgba(18, 56, 82, 0.719);
+<<<<<<< HEAD
+    background-color: rgb(255, 68, 10);
     color: white;
     height: 30px;
     font-size: 12px;
+   
+    display: inline-block;
+    margin-right: 18px;
+
 }
+=======
+   
+        height: 30px;
+        width: 100px;
+        background-color: #18bda7;
+        /* background: linear-gradient(-60deg, hsl(288, 88%, 26%) 2%, hsl(180, 89%, 31%) 30%); */
+        }
+    
+>>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
 

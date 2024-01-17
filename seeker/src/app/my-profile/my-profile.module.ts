@@ -6,7 +6,6 @@ import { ProfileRoutingModule } from './routes/profile/profile-routing.module';
 import { ViewprofileComponent } from './components/viewprofile/viewprofile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowProfileComponent } from './components/show-profile/show-profile.component';
-import { ExperienceComponent } from './components/experience/experience.component';
 
 
 
@@ -16,7 +15,6 @@ import { ExperienceComponent } from './components/experience/experience.componen
     UpdateProfileComponent,
     ViewprofileComponent,
     ShowProfileComponent,
-    ExperienceComponent
   ],
   imports: [
     CommonModule,

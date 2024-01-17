@@ -2,13 +2,13 @@
     <div class="row ">
       <div class="col">
         <p class="fs-5 fw-bold mt-2">Saved Application</p> 
-         <div class="card border-0 shadow"*ngFor="let list of jobs ">
+         <div class="card border-0 shadow"*ngFor="let list of saved ">
            <div class="card-body " >
             <img src="../../../../assets/images/aitrich.png" alt="image1">
-            <span class="ms-4  fw-bold">{{list}}</span>
-            <p class="c_name text-info">{{list.jobSummary}}</p>
+            <span class="ms-4  fw-bold">{{list.dateSaved}}</span>
+            <!-- <p class="c_name text-info">{{list.jobSummary}}</p>
             <p class="c_name text-info">{{list.postedDate}}</p>
-            <p class="c_name text-info">{{list.postedBy}}</p>
+            <p class="c_name text-info">{{list.postedBy}}</p> -->
             <button class="btn btn-primary float-end mb-5"></button>
            <p class="card-text">We are looking for a UI/UX Designer to turn our software into easy-to-use products
             for our clients.</p>

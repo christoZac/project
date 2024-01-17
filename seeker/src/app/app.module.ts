@@ -12,6 +12,7 @@ import { ApplicationModule } from './application/application.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/Interceptor/auth.interceptor';
 import { FindComponent } from './all-jobs/components/find/find.component';
+import { ProfileRoutingModule } from './my-profile/routes/profile/profile-routing.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FindComponent } from './all-jobs/components/find/find.component';
     // AlljobsParentComponent
     // AlljobsChildComponent
     
+    
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { FindComponent } from './all-jobs/components/find/find.component';
     LandingModule,
     AllJobsModule,
     ApplicationModule,
-    HttpClientModule
+    HttpClientModule,
+    ProfileRoutingModule
     // HeaderComponent
   ],
   providers: [

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { job } from '../../model/job';
+import { job, savedjobs } from '../../model/job';
 import { JobsService } from '../../service/jobs.service';
 
 @Component({
@@ -8,15 +8,16 @@ import { JobsService } from '../../service/jobs.service';
   styleUrls: ['./saved-jobs.component.css']
 })
 export class SavedJobsComponent {
-  jobs: job[] = [];
+  jobTitle:any;
+  saved: savedjobs[] = [];
   constructor(private jobService: JobsService) { }
   ngOnInit() {
-    this.getSaveds();
+    this.getSaveds(this.jobTitle);
   }
-  getSaveds() {
-    this.jobService.getSavedJob().subscribe((response: job[]) => {
-     this.jobs=response;
-      console.log(this.jobs);
+  getSaveds(jobTitle:any) {
+    this.jobService.getSavedJob(jobTitle).subscribe((response:any) => {
+     this.saved=response;
+      console.log(this.saved);
 
     });
   }
