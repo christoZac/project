@@ -64,22 +64,32 @@
                         <div class="card-body">
                             <img src="../../../../assets/images/light-bulb 1.png">
                             <span class="fw-bold mx-2">Skills</span> 
-                            <span>
-                                <select name="" id="" class="form-control w-50" [(ngModel)]="skills">  
-                                  <option value="" *ngFor="let list of dropDownSkill">
-                                    <p>{{ list.name }}
-                                    </p>
+                            <span class="float-end">
+                                
+                                <select name="" id="" class="form-control w-100" [(ngModel)]="skills" >
+                                  <option *ngFor="let list of dropDownSkill" [value]="list.id">
+                                    
+                                    <p>{{ list.name }}</p>
                                   </option>
                                 </select>
-                                <button class="btn btn-success" (click)="addSkill(skills,profileId)">ADD</button> 
+                            
+                                <button class="btn btn-success" (click)="addSkill(skills)">ADD</button>
                               </span>
+                              
                         </div>
                         <div class="card-text mx-5 text-secondary mb-4">
-                            <ul>
+                            <!-- <ul>
                                 <li *ngFor="let skill of skills">
+                                 
                                   {{ skill.name }}
                                 </li>
-                              </ul>
+                              </ul> -->
+                              <!-- <li>hhh</li> -->
+
+                              <div  *ngFor="let skill of skills">
+                                <li>{{skill.name}}</li>
+
+                              </div>
                         </div>
 
 
@@ -128,7 +138,7 @@
                         <div class="card-body ">
                             <img src="../../../../assets/images/portfolio 2.png">
                             <span class="fw-bold mx-2">Experience</span> 
-                             <a routerLink="/experience"><button class=" rounded bg-primary d-flex float-end border-0 text-white"> Add</button></a>
+                             <a routerLink="./experience"><button class=" rounded bg-primary d-flex float-end border-0 text-white"> Add</button></a>
                         </div>
 
                         <hr>

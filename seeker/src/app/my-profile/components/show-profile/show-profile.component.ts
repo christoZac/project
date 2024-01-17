@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileService } from '../../service/profile.service';
 import { profiles } from '../../model/profile_model';
 import { Skill } from '../../model/profile';
@@ -14,12 +14,11 @@ export class ShowProfileComponent {
   profileId!: string;
   dropDownSkill:Skill[]=[];
   skills:Skill[]=[];
-  selectedSkill: any;
 
   
   profileDatas:profiles[] = []
 
-  constructor(private route: ActivatedRoute, private ps: ProfileService) {}
+  constructor(private route: ActivatedRoute, private ps: ProfileService,private router: Router,) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
@@ -48,9 +47,17 @@ export class ShowProfileComponent {
   }
 
   showSkill(){
-    this.ps.getSkill(this.profileId).subscribe((response:any)=>{
-      this.skills=response
-    console.log(this.skills);
+    // alert("hi")
+  //   this.ps.getSkill(this.profileId).subscribe((response:any)=>{
+  //     this.skills=response
+  //   console.log(this.skills);
+  //   alert(this.skills)
+
+  // })
+  this.ps.getSkill(this.profileId).subscribe((getdata:Skill[])=>{
+    this.skills=getdata
+
+
   })
   }
 
@@ -62,15 +69,18 @@ export class ShowProfileComponent {
     })
   }
 
-  addSkill(profileId:any , id:any){
-    this.ps.postSkill(profileId,id).subscribe((response:any)=>{
-      this.skills=response
-      console.log(this.skills);
-  
-    })
-  }
-  
-  
-     
+  addSkill(skillId: any) {
+    console.log(skillId);
+    this.ps.postSkill(this.profileId, skillId).subscribe((response) => {
+      console.log(response)
+      
+    
+    
+
+    });
+
+    
+    this.showSkill()
+  }    
   }
 

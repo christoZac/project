@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'update', component:UpdateProfileComponent},
   {path:'viewProfile', component:ViewprofileComponent},
   {path: 'show/:id', component: ShowProfileComponent },
-  {path:'experience',component:ExperienceComponent}
+  {path:'experience/:id',component:ExperienceComponent}
 
 ];
 

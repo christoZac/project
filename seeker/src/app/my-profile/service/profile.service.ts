@@ -45,12 +45,11 @@ export class ProfileService {
     return this.http.get<Skill[]>(environment.baseUrl+'v1/skills')
   }
 
-  postSkill(data:any,profileId:any)
-  {
-    const jobSeekerId=this.getItem()
-    return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills',data)
-
-  }
-  
-  
+  postSkill(profileId: string, skillId: string):Observable<Skill[]> {
+    const requestBody = {
+       skillId
+    };
+    const jobSeekerId = this.getItem();
+    return this.http.post<Skill[]>(environment.baseUrl + 'v1/' + jobSeekerId + '/profile/' + profileId + '/skills',  requestBody );
+  }  
 }

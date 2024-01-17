@@ -15,7 +15,7 @@ export class getProfile{
 }
 
 export class Skill{
-    id:string='';
+    id!:string;
     name!:string;
     description!:string;
 
