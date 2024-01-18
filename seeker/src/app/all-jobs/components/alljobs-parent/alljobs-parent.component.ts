@@ -29,41 +29,10 @@ export class AlljobsParentComponent {
   }
 
 
-<<<<<<< HEAD
-  saveJob(id: string) {
-    this.jobService.postSaved(id).subscribe(
-      (response: any) => {
-        this.save = response;
-        console.log(this.save);
-      },
-      (error) => {
-        console.error(error);
-  
-        if (error.status === 200 && error.statusText === 'OK') {
-          
-          console.log('Job saved successfully');
-        
-        } else {
-         
-        }
-      }
-    );
-  }
-  
-  
- 
-  // applyJob(data:any){
-  //   this.jobService.postJobapplication(data).subscribe((response:any)=>{
-  //     this.apply=response
-  //     console.log(this.apply)
-
-  //   });
-  // }
-=======
   saveJob(data:any){
     
   
-    this.jobService.postSaved(data,data).subscribe((response ) => { 
+    this.jobService.postSaved(data,data).subscribe((response:any ) => { 
        this.save=response;
        console.log(this.save)
  
@@ -73,5 +42,4 @@ export class AlljobsParentComponent {
 
   }
  
->>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
 }
