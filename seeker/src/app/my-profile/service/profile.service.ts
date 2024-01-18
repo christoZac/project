@@ -1,10 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-import { Experience, Experiences, getProfile, profile, resume, Skill } from '../model/profile';
-=======
 import { Experience,getProfile,profile,Skill} from '../model/profile';
->>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
 import { environment } from 'src/app/environment/environment';
 import { Observable } from 'rxjs';
 import { profiles } from '../model/profile_model';
@@ -46,7 +42,7 @@ export class ProfileService {
     return this.http.get<Skill[]>(environment.baseUrl+'v1/skills')
   }
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
   postSkill(profileId: string, skillId: string):Observable<Skill[]> {
     const requestBody = {
        skillId
@@ -54,7 +50,7 @@ export class ProfileService {
     const jobSeekerId = this.getItem();
     return this.http.post<Skill[]>(environment.baseUrl + 'v1/' + jobSeekerId + '/profile/' + profileId + '/skills',  requestBody );
   }  
-=======
+// =======
   postSkill(profileId:string,id:string){
     const jobSeekerId=this.getItem()
     const requestbody=[id]
@@ -67,7 +63,7 @@ experienceget(profileId:any){
     return this.http.get(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experince')
   }
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 
 postQualification(profileId:any,data:any){
   
@@ -78,7 +74,7 @@ postQualification(profileId:any,data:any){
 }
 getResume(profileId:any){
   return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
-=======
+// =======
   resumeget(profileId:any){
     
       return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
@@ -89,7 +85,7 @@ getResume(profileId:any){
       
       return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experience',data)
     }
->>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
+// >>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
 }
 
 postResume(profileID:any,file:any){
@@ -105,5 +101,5 @@ postResume(profileID:any,file:any){
   return this.http.post<resume[]>(environment.baseUrl+'v1/job-seeker/upload-resume'+{headers},formData)
 
 }
->>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
+// >>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
 }
