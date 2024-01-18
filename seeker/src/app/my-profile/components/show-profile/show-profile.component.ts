@@ -27,15 +27,11 @@ export class ShowProfileComponent {
   experience:Experience[]=[];
   resumes:resume[]=[]
   profileDatas:profiles[] = [];
-<<<<<<< HEAD
-  qualification:qualifications[]=[]
-=======
   addexperience!: FormGroup;
   submitted=false;
   qualification:Experience[]=[]
   // adddata:Experiences[]=[];
   // experience:Experience[]=[];
->>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
 
   constructor(private route: ActivatedRoute, private ps: ProfileService,private formBuilder: FormBuilder) { }
 >>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
@@ -55,7 +51,7 @@ export class ShowProfileComponent {
       serviceEnd: [''],
     })
     this.getProfile();
-    this.getresume()
+    // this.getresume()
   }
   getProfile() {
     this.ps.jobSeekerProfile().subscribe((response: any) => {
@@ -139,15 +135,15 @@ export class ShowProfileComponent {
      
 >>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
   }
-getresume(){
- this.ps.getResume(this.profileId).subscribe((response:any)=>{
-      this. resumes=response
-    console.log(this. resumes);
+// getresume(){
+//  this.ps.getResume(this.profileId).subscribe((response:any)=>{
+//       this. resumes=response
+//     console.log(this. resumes);
 
-   })
+//    })
   
      
- }
+//  }
   addQualification(data:any){
     // console.log(data);
     const profileID=this.profileId
@@ -159,13 +155,13 @@ getresume(){
 
   }
   
-  addResume(data:any){
-    alert("hello")
-    const profileID=this.profileId
-    this.ps.postResume(profileID,data).subscribe((response:any)=>{
-      this.resumes=response
-    })
-  }
+  // addResume(data:any){
+  //   alert("hello")
+  //   const profileID=this.profileId
+  //   this.ps.postResume(profileID,data).subscribe((response:any)=>{
+  //     this.resumes=response
+  //   })
+  // }
   
   addexp(data:any){
     console.log(data)

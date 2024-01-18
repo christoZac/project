@@ -63,6 +63,7 @@ experienceget(profileId:any){
     return this.http.get(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experince')
   }
 
+<<<<<<< HEAD
 // <<<<<<< HEAD
 
 postQualification(profileId:any,data:any){
@@ -75,6 +76,8 @@ postQualification(profileId:any,data:any){
 getResume(profileId:any){
   return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
 // =======
+=======
+>>>>>>> c4d8d39932de3984a0b3e4557885484777c9b21f
   resumeget(profileId:any){
     
       return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
@@ -85,21 +88,29 @@ getResume(profileId:any){
       
       return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experience',data)
     }
+<<<<<<< HEAD
 // >>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
+=======
+>>>>>>> c4d8d39932de3984a0b3e4557885484777c9b21f
 }
 
-postResume(profileID:any,file:any){
+// postResume(profileID:any,file:any){
 
-  const headers = new HttpHeaders({
-    'profileName': 'string', 
-    'profileSummary': 'string',
-    'title': 'string',
+//   const headers = new HttpHeaders({
+//     'profileName': 'string', 
+//     'profileSummary': 'string',
+//     'title': 'string',
     
-  });
-  const formData = new FormData();
-  formData.append('file', file);
-  return this.http.post<resume[]>(environment.baseUrl+'v1/job-seeker/upload-resume'+{headers},formData)
+//   });
+//   const formData = new FormData();
+//   formData.append('file', file);
+//   return this.http.post<resume[]>(environment.baseUrl+'v1/job-seeker/upload-resume'+{headers},formData)
 
+<<<<<<< HEAD
 }
 // >>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
 }
+=======
+// }
+// }
+>>>>>>> c4d8d39932de3984a0b3e4557885484777c9b21f
