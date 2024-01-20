@@ -15,26 +15,19 @@ export class ShowProfileComponent {
   profileId!: string;
   dropDownSkill:Skill[]=[];
   skills:Skill[]=[];
-<<<<<<< HEAD
-
-  
-  profileDatas:profiles[] = []
-
-  constructor(private route: ActivatedRoute, private ps: ProfileService,private router: Router,) {}
-=======
   profileData:profile[]=[];
   selectedSkill: any;
   experience:Experience[]=[];
-  resumes:resume[]=[]
   profileDatas:profiles[] = [];
   addexperience!: FormGroup;
   submitted=false;
   qualification:Experience[]=[]
+  resumes:resume[]=[]
+  selectedFile: File | null = null;
   // adddata:Experiences[]=[];
   // experience:Experience[]=[];
 
   constructor(private route: ActivatedRoute, private ps: ProfileService,private formBuilder: FormBuilder) { }
->>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
@@ -43,16 +36,13 @@ export class ShowProfileComponent {
       
       
     });
-    this.addexperience = this.formBuilder.group({
-      jobTitle: [''],
-      companyName: [''],
-      summary: [''],
-      serviceStart: [''],
-      serviceEnd: [''],
-    })
+
     this.getProfile();
     // this.getresume()
   }
+
+
+
   getProfile() {
     this.ps.jobSeekerProfile().subscribe((response: any) => {
      
@@ -71,6 +61,8 @@ export class ShowProfileComponent {
     this.viewSkills()
     this.getexp();
   }
+
+
 
   showSkill(){
     // alert("hi")
@@ -95,21 +87,6 @@ export class ShowProfileComponent {
     })
   }
 
-<<<<<<< HEAD
-  addSkill(skillId: any) {
-    console.log(skillId);
-    this.ps.postSkill(this.profileId, skillId).subscribe((response) => {
-      console.log(response)
-      
-    
-    
-
-    });
-
-    
-    this.showSkill()
-  }    
-=======
   addSkill(id:any){
     this.showSkill();
     console.log(id);
@@ -133,7 +110,6 @@ export class ShowProfileComponent {
   })
   
      
->>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
   }
 // getresume(){
 //  this.ps.getResume(this.profileId).subscribe((response:any)=>{
@@ -173,4 +149,27 @@ export class ShowProfileComponent {
     })
   
   }
+
+  // onFileSelected(event: any) {
+  //   // Capture the selected file from the input event
+  //   const files = event.target.files;
+  //   if (files && files.length > 0) {
+  //     this.selectedFile = files[0];
+  //   }
+  // }
+
+  // addResume(profileName:any,profileSummary:any,title:any){
+  //   const profileId=this.profileId
+
+  //   this.ps.postResume(profileId,profileName,profileSummary,title,this.selectedFile).subscribe((response:any)=>{
+  //     console.log(response);
+      
+
+  //   })
+
+  // }
+
+
+
+
 }

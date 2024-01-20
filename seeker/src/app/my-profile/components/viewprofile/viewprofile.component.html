@@ -17,18 +17,24 @@
     </div>
 </div> -->
 
-<div class="containetr">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-4 mt-3"   *ngFor="let list of profileData">
-            <div class="card  h-100 w-75 mx-auto shadow">
-                <div class="card-body text-center ">
+        <div class="col-md-6 mt-3"   *ngFor="let list of profileData">
+            <div class="card  h-100 w-75 mx-auto shadow" >
+                <div class="card-body">
+                    <i class="bi bi-pencil-square float-end"></i>
+                    <a class="text-decoration-none text-dark" [routerLink]="['../show',list.id]">
+                    <div>
                     <h5 >{{list.profileName | titlecase}}</h5>
                     <p>{{list.profileSummary |titlecase}}</p>
-                    <a [routerLink]="['../show',list.id]"><button  class="btn btn-primary" (click)="getId(list)">View</button></a>
+                </div>
+            </a>
+                    <input *ngIf="upload" class="mt-3" type="file" (change)="uploadFile($event,list)">
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
  

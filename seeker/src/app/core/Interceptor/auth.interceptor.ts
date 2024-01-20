@@ -26,7 +26,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
       request = request.clone({
         setHeaders: {
-          'Content-Type': 'application/json',
+          // 'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
           // 'id': provider_id ? provider_id : '', // Add user ID to the headers (if available)
           // role: role

@@ -42,7 +42,7 @@ export class ProfileService {
     return this.http.get<Skill[]>(environment.baseUrl+'v1/skills')
   }
 
-// <<<<<<< HEAD
+
   postSkill(profileId: string, skillId: string):Observable<Skill[]> {
     const requestBody = {
        skillId
@@ -50,12 +50,7 @@ export class ProfileService {
     const jobSeekerId = this.getItem();
     return this.http.post<Skill[]>(environment.baseUrl + 'v1/' + jobSeekerId + '/profile/' + profileId + '/skills',  requestBody );
   }  
-// =======
-  postSkill(profileId:string,id:string){
-    const jobSeekerId=this.getItem()
-    const requestbody=[id]
-    return this.http.post<Skill[]>(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/skills',requestbody)
-  }
+
   
 
 experienceget(profileId:any){
@@ -63,21 +58,6 @@ experienceget(profileId:any){
     return this.http.get(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experince')
   }
 
-<<<<<<< HEAD
-// <<<<<<< HEAD
-
-postQualification(profileId:any,data:any){
-  
-  const jobSeekerId=this.getItem()
-  return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Qualification',data)
-
-
-}
-getResume(profileId:any){
-  return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
-// =======
-=======
->>>>>>> c4d8d39932de3984a0b3e4557885484777c9b21f
   resumeget(profileId:any){
     
       return this.http.get(environment.baseUrl+'v1/job-seeker/getResume/'+profileId)
@@ -88,13 +68,35 @@ getResume(profileId:any){
       
       return this.http.post(environment.baseUrl+'v1/'+jobSeekerId+'/profile/'+profileId+'/Experience',data)
     }
-<<<<<<< HEAD
-// >>>>>>> e8c9fc1d30d2a137215f5baabd1e66513c3b779c
-=======
->>>>>>> c4d8d39932de3984a0b3e4557885484777c9b21f
+
+    postResume(profileId:any,profileName:any,profileSummary:any,title:any,file:any){
+      const jobSeekerId=this.getItem()
+      const formData = new FormData();
+      formData.append('file', file,file.name);
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+      return this.http.post(environment.baseUrl+'v1/job-seeker/upload-resume?jobSeekerId='+jobSeekerId+'&profileId='+profileId+'&profileName='+profileName+'&profileSummary='+profileSummary+'&title='+title,formData,{headers:headers})
+
+    }
 }
 
-// postResume(profileID:any,file:any){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//// postResume(profileID:any,file:any){
 
 //   const headers = new HttpHeaders({
 //     'profileName': 'string', 
@@ -106,11 +108,5 @@ getResume(profileId:any){
 //   formData.append('file', file);
 //   return this.http.post<resume[]>(environment.baseUrl+'v1/job-seeker/upload-resume'+{headers},formData)
 
-<<<<<<< HEAD
-}
-// >>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
-}
-=======
 // }
 // }
->>>>>>> c4d8d39932de3984a0b3e4557885484777c9b21f

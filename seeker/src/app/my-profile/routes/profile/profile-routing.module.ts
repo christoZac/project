@@ -11,12 +11,8 @@ const routes: Routes = [
   {path:'update', component:UpdateProfileComponent},
   {path:'viewProfile', component:ViewprofileComponent},
   {path: 'show/:id', component: ShowProfileComponent },
-<<<<<<< HEAD
-  {path:'experience/:id',component:ExperienceComponent}
-=======
   {path:'show/:id', component:ShowProfileComponent },
   
->>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
 
 ];
 

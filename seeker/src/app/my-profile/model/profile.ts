@@ -1,5 +1,4 @@
 export class profile{
-   
     jobSeekerId:any | undefined;
     profileName!:string;
     profileSummary!:string;
@@ -15,26 +14,11 @@ export class getProfile{
 }
 
 
-
-
-
 export class Skill{
-<<<<<<< HEAD
-    id!:string;
-=======
     id:string | undefined
->>>>>>> 883c4a1cfe08d57b571e095d5427457db682fcf0
     name!:string;
     description!:string;
-
-
 }
-
-
-
-
-
-
 
 
 export class Experience{
@@ -55,12 +39,14 @@ export class Experience{
 //   serviceEnd:string="";
 // }
 export class resume{
-id: string="";
+    id: string="";
     title: string="";
-    file: string="";
+    file!: File;
+    profileName:string='';
+    profileSummary:string='';
     }
 
 export class qualifications{
     name: string="";
-  description:string="";
+    description:string="";
 }
